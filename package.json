@@ -1,0 +1,1 @@
+{"name":"ai-slp-learning-studio","version":"1.0.0","private":true,"description":"Source-mapped AI and speech-language pathology MCQ practice","scripts":{"test":"node scripts/validate.mjs && node --check app.js && node --check sw.js","start":"python -m http.server 8080"}}
