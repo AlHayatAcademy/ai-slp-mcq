@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 const data=JSON.parse(fs.readFileSync(new URL('../question-bank.json',import.meta.url),'utf8'));
 const context={window:{}};vm.runInNewContext(fs.readFileSync(new URL('../bank.js',import.meta.url),'utf8'),context);
 assert.equal(JSON.stringify(context.window.MCQ_BANK),JSON.stringify(data),'Browser bank matches editable JSON');
-assert.equal(data.questions.length,360);assert.equal(data.topics.length,25);
+assert.equal(data.questions.length,580);assert.equal(data.topics.length,29);
 const ids=new Set(),stems=new Set(),topicIds=new Set(data.topics.map(t=>t.id)),answers=[0,0,0,0];
 for(const q of data.questions){
  assert(!ids.has(q.id),'Duplicate ID');ids.add(q.id);
@@ -15,6 +15,8 @@ for(const q of data.questions){
  assert(q.explanation&&q.reference&&q.question,'Complete source mapping');
  assert(['Recall','Conceptual','Applied'].includes(q.difficulty));answers[q.answer]++;
 }
+assert.equal(data.questions.filter(q=>/^d[1-4]$/.test(q.topic)).length,100);
+for(let i=1;i<=4;i++)assert(topicIds.has('d'+i),'Documentation section missing');
 for(const t of data.topics)assert(data.questions.some(q=>q.topic===t.id),'Empty topic');
 for(let i=1;i<=16;i++)assert(topicIds.has('b'+i),'Book chapter missing');
 for(let i=1;i<=6;i++)assert(topicIds.has('n'+i),'Clinical topic missing');

@@ -1,4 +1,4 @@
-const CACHE='ai-slp-studio-v1';
+const CACHE='ai-slp-studio-v3';
 const FILES=['./','./index.html','./styles.css','./app.js','./bank.js','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('ai-slp-studio-')&&k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});

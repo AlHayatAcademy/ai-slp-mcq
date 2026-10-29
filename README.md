@@ -1,98 +1,84 @@
-# AI × SLP — The Learning Studio
+# AI × SLP — Simple Exam Preparation
 
-A responsive, self-contained MCQ study website for **Artificial Intelligence in Speech-Language Pathology**. It contains **360 original four-option questions across 25 sections**, with a best answer, explanation and source reference for every question.
+**580 MCQs across 29 study sections.** Open the site and start answering immediately.
 
-## Start using it
+## The learning flow
 
-Open `index.html` in a modern browser. No installation, build step, account, API key or paid service is required. Browser-local progress depends on storage being available. For more consistent storage and offline caching, serve it locally or publish it on GitHub Pages.
+1. Click an option.
+2. See the correct answer immediately, including when your choice is wrong.
+3. Read **In simple words** to understand the concept.
+4. Use the always-visible **Next question** button.
 
-If Python is installed, run this inside the folder:
+There is no setup form, Check Answer button or timer. The first choice is locked for that round so you can see what you actually knew. To try again, restart the topic or use mistake revision.
+
+## A practical exam-preparation route
+
+- **Study by topic:** work through each clinical topic, Lecture 1 and the book chapters.
+- **Review mistakes:** repeat wrong answers. A later correct answer removes the item from this list.
+- **Save:** star difficult questions for another revision round.
+- **Quick revision:** read the correct answers and simple explanations in a searchable revision sheet.
+- **Mixed revision:** shuffle questions to practice recognizing concepts outside chapter order. Feedback remains immediate.
+
+The complete-course order is six clinical teaching topics, Lecture 1, the four documentation-lecture sections, applied cases/calculations, the book prologue, and chapters 1–16. The actual exam's weighting depends on the teacher's syllabus; the website does not invent likely paper questions.
+
+## Open locally
+
+Extract the ZIP and open `index.html`. No account, API key, package installation or build is needed.
+
+For consistent browser storage and offline caching, serve the folder or publish it. If Python is installed:
 
 ```sh
 python -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`.
 
 ## Publish on GitHub Pages
 
-1. Create a GitHub repository named `ai-slp-mcq` and use `main` as the default branch.
-2. Upload **the contents of this folder** into the repository root. `index.html` must be at the root. Include the `.github/workflows/pages.yml` file.
-3. Open **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-4. Open **Actions → Deploy to GitHub Pages → Run workflow → main**. When it succeeds, the deployment supplies your website link.
+1. Create a repository using `main` as the default branch.
+2. Upload the contents of this folder to the repository root, including `.github/workflows/pages.yml`. Keep `index.html` at the root.
+3. Select **Settings → Pages → Build and deployment → Source → GitHub Actions**.
+4. Run **Actions → Deploy to GitHub Pages → Run workflow**. The successful deployment provides the website link.
 
-The workflow validates the question bank and publishes only the six study files and `.nojekyll`. It uses relative asset paths, so it works under a project repository URL. If your default branch is not `main`, change the branch in `.github/workflows/pages.yml`.
+Alternative: remove `.github/workflows/pages.yml` and use Pages' **Deploy from a branch → main → /(root)** option. Choose one publishing method.
 
-Alternative: delete `.github/workflows/pages.yml`, upload the remaining files, and configure Pages to **Deploy from a branch → main → /(root)**. Both approaches serve the same buildless site; choose one.
+All assets use relative paths and work under a project repository URL. No external fonts, images, AI calls or analytics are required.
 
-## Study features
+## Coverage
 
-- Dashboard with attempted questions, latest-answer accuracy and mistakes to revisit.
-- Six clinical teaching topics, all 16 book chapters, the prologue, Lecture 1 and an integrated applied section.
-- Source filters and topic/concept search.
-- Practice sessions with checked answers and immediate explanations.
-- Timed exams with answers hidden until submission; the deadline survives leaving and reloading.
-- Exam auto-submission when time expires in an open session, or immediately when an expired session is resumed.
-- Optional question-order shuffling, session length and question-style filters.
-- Bookmarks, mistake review, session resumption and retry of incorrect/unanswered questions.
-- Source and coverage map with PDF page positions and physical slide positions.
-- Dark mode, adjustable reading scale, keyboard controls and printable session review.
-- Browser-local storage and offline return visits after a successful hosted load/cache.
+The original 360-question bank was expanded by 120 source-grounded questions, including 12 clinical-note items, 12 lecture-slide items and six additional questions for each of the 16 book chapters. Explanations in 84 original items were rewritten in simpler language. All new items include plain explanations.
 
-## Coverage and interpretation
+The 47-slide documentation deck adds **100 MCQs** in four sections: transcript-to-SOAP (30), coding and calculations (35), auditing and terminology (25), and accountability/review (10). These questions use its slide text, tables and speaker notes. The earlier 480 questions remain included.
 
-The bank covers the substantive teaching themes from the three supplied files:
+Source materials:
 
-- `Lecture Notes Artificial Intelligence in Speech-Language Pathology.pdf` — 9 pages, six topics.
-- `Lec 1 AI in SLP.pptx` — 36 physical slides, including five embedded visual summaries.
-- `AI Book for MS Program.pdf` — 379 PDF pages; Melanie Mitchell's *Artificial Intelligence: A Guide for Thinking Humans* (2019), including the prologue and all 16 chapters.
+- `Lecture Notes Artificial Intelligence in Speech-Language Pathology.pdf`: all six teaching topics, 9 PDF pages.
+- `AI assisted Documentation(2).pptx`: all three teaching parts across 47 slides, plus its worked cases, tables, exercises and speaker-note guidance.
+- `Lec 1 AI in SLP.pptx`: introductory teaching content across 36 physical slides, including embedded visual summaries.
+- `AI Book for MS Program.pdf`: the prologue and all 16 chapters of Melanie Mitchell's *Artificial Intelligence: A Guide for Thinking Humans* (2019), 379 PDF pages.
 
-See `COVERAGE.md` for section counts and learning objectives. Page references use PDF positions, including front matter, rather than printed pagination. Slide references use physical positions rather than inconsistent printed footer numbering.
+`COVERAGE.md` lists section objectives and counts. `SOURCE_CHECKLIST.md` maps clinical subsections, slide groups and book sections to relevant question IDs for review. Page references use PDF positions, not printed pagination; slide references use physical positions.
 
-The questions are an original educational adaptation. The PDFs, slides, source illustrations and large source extracts are **not included** in the repository. Bibliographic lists, index entries, advertising and publisher front matter are not separate quiz objectives. Coverage is thematic and chapter-wide, not a claim that every sentence or incidental detail has its own question.
+Coverage addresses substantive teaching concepts, distinctions, examples and calculations. It is not a line-by-line reproduction of every sentence. Publisher information, acknowledgments, index entries and bibliographic lists are not separate quiz objectives. The supplied PDFs, slide deck and source illustrations are not redistributed.
 
-Book examples, forecasts and author opinions should be read in the book's historical context. Clinical study figures are explicitly tested as reported in the lecture notes; their original studies have not been independently re-audited for this adaptation. The bank is for learning and revision, not a validated examination or a clinical/legal implementation protocol.
+Book views and forecasts are tested in historical context. Clinical figures are reported as given in the notes and have not been independently updated. Source-bound regulatory questions test what the notes mention, not current legal advice. This is a self-study resource, not a validated examination instrument.
 
-## Progress and scoring
+## Progress
 
-Practice progress records the most recent **checked** answer for each question. Finishing a practice session also checks any selected but unverified answers. Unanswered items do not enter the attempted-question total.
+Each option click records the answer immediately. The topic progress bar counts questions with a correct latest attempt. Stars, mistakes and the current position are stored in this browser. The site resumes on reopening. Progress does not synchronize across devices.
 
-Exam results use the total session length as the denominator, so unanswered questions count as incorrect in the session score. Selected exam answers enter dashboard progress after submission. Unanswered exam items remain unattempted in dashboard progress but are available in that session's retry list.
+Restarting a round does not clear your overall answers or stars. Resetting all study data requires confirmation in Settings. An earlier version's compatible browser progress is preserved.
 
-A topic bar shows how many questions currently have a correct latest checked answer. A later correct attempt removes a question from the mistake collection. Saved questions stay saved until explicitly unsaved.
+Keyboard shortcuts: **1–4** select an answer, **Right arrow** moves forward after answering, and **Left arrow** returns to the previous question. Day/night themes and reading size are in Settings.
 
-Progress belongs to the browser/device, not an account. It does not synchronize across devices. The Settings page offers a confirmed reset.
+## Edit and validate
 
-## Editing the question bank
-
-`question-bank.json` is the editable data. Each question includes `id`, `topic`, `question`, four `options`, a zero-based `answer` index, `explanation`, `reference` and `difficulty` (question style: Recall, Conceptual or Applied). These styles describe cognitive demand, not psychometrically validated difficulty.
-
-The browser reads `bank.js`, which contains the same object as `window.MCQ_BANK`. After editing the JSON, regenerate it with Node:
+Edit `question-bank.json`, then regenerate the matching browser file:
 
 ```sh
 node -e "const fs=require('node:fs'); const b=JSON.parse(fs.readFileSync('question-bank.json','utf8')); fs.writeFileSync('bank.js','window.MCQ_BANK = '+JSON.stringify(b,null,2)+';\n')"
 ```
 
-Run the consistency check with Node 18+:
+Run `npm test` with Node 18+ to check unique questions, four distinct options, answer indices, explanations, source references, topic coverage and JSON/browser parity. These checks do not replace subject-matter review.
 
-```sh
-npm test
-```
-
-This checks structural integrity, unique stems and IDs, answer indices, four distinct options, source mapping, topic coverage and browser/JSON parity. It does not independently establish subject-matter validity. Review new items against their source before release. If the question count changes, update the expected count in `scripts/validate.mjs` and the dashboard copy. For an asset-breaking release, change the cache version in `sw.js`.
-
-## Files
-
-| File | Purpose |
-| --- | --- |
-| `index.html` | Accessible app shell and metadata |
-| `styles.css` | Responsive layout, topic colors and themes |
-| `app.js` | Sessions, scoring, search and progress |
-| `bank.js` | Browser-ready question bank |
-| `question-bank.json` | Editable structured bank |
-| `sw.js` | Same-origin offline cache |
-| `icon.svg` | Original waveform icon |
-| `scripts/validate.mjs` | Question-bank integrity checks |
-| `.github/workflows/pages.yml` | Optional GitHub Pages deployment workflow |
-
-No analytics, third-party fonts, external images, patient-data collection or remote AI calls are used.
+For an asset-breaking release, increase the cache version in `sw.js`. Offline return visits require a successful hosted load and a browser supporting service workers. The current cache version is v3.

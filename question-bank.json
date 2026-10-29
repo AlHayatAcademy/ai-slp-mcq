@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "title": "AI in Speech-Language Pathology",
   "topics": [
     {
@@ -201,6 +201,38 @@
       "number": 0,
       "source": "book",
       "order": 24
+    },
+    {
+      "id": "d1",
+      "title": "Documentation: transcript to SOAP",
+      "group": "Documentation lecture",
+      "number": 1,
+      "source": "documentation",
+      "order": 25
+    },
+    {
+      "id": "d2",
+      "title": "Documentation: coding and calculations",
+      "group": "Documentation lecture",
+      "number": 2,
+      "source": "documentation",
+      "order": 26
+    },
+    {
+      "id": "d3",
+      "title": "Documentation: audit and terminology",
+      "group": "Documentation lecture",
+      "number": 3,
+      "source": "documentation",
+      "order": 27
+    },
+    {
+      "id": "d4",
+      "title": "Documentation: accountability and review",
+      "group": "Documentation lecture",
+      "number": 4,
+      "source": "documentation",
+      "order": 28
     }
   ],
   "questions": [
@@ -215,7 +247,7 @@
         "Only systems that generate new language"
       ],
       "answer": 2,
-      "explanation": "AI includes recognition, prediction, language processing and other computational tasks.",
+      "explanation": "AI is a broad name for computer systems that do tasks linked with intelligence. Examples include recognizing speech, finding patterns and generating text.",
       "reference": "1",
       "difficulty": "Recall"
     },
@@ -275,7 +307,7 @@
         "A manually written list of category definitions"
       ],
       "answer": 2,
-      "explanation": "Learned knowledge is distributed across numerical parameters and can be difficult to explain.",
+      "explanation": "The model learns many numbers called weights. Its knowledge is spread across these numbers, so the reasons behind an answer can be hard to inspect.",
       "reference": "1",
       "difficulty": "Conceptual"
     },
@@ -350,7 +382,7 @@
         "To establish that a model understands every case"
       ],
       "answer": 2,
-      "explanation": "A test set estimates generalization only when it remains independent of model development.",
+      "explanation": "The model has not learned from these examples. Testing on them checks whether it can handle something new.",
       "reference": "2",
       "difficulty": "Recall"
     },
@@ -365,7 +397,7 @@
         "The test set begins influencing development"
       ],
       "answer": 3,
-      "explanation": "Repeated test-driven tweaking makes the final score less independent.",
+      "explanation": "If developers keep changing the model to suit the test, the test is no longer an independent check. The score may look better than real-world performance.",
       "reference": "2",
       "difficulty": "Conceptual"
     },
@@ -380,7 +412,7 @@
         "Updates every input to the same numerical value"
       ],
       "answer": 1,
-      "explanation": "A perceptron combines weighted inputs and compares the total with a threshold.",
+      "explanation": "Each input is multiplied by a weight. The perceptron adds the results and checks whether the total reaches a cutoff.",
       "reference": "2",
       "difficulty": "Recall"
     },
@@ -395,7 +427,7 @@
         "Input, training labels, hidden layers only"
       ],
       "answer": 2,
-      "explanation": "Hidden layers transform representations between input and output.",
+      "explanation": "Input brings information in. Hidden layers process it. The output gives the result.",
       "reference": "2",
       "difficulty": "Recall"
     },
@@ -425,7 +457,7 @@
         "Only the input signal before any comparison"
       ],
       "answer": 0,
-      "explanation": "Error information is propagated backward through the network.",
+      "explanation": "The model compares its answer with the expected answer. Error information travels backward to help adjust the weights.",
       "reference": "2",
       "difficulty": "Recall"
     },
@@ -440,7 +472,7 @@
         "The sequence of all weight updates over training"
       ],
       "answer": 2,
-      "explanation": "ConvNets use feature detectors with shared weights across locations.",
+      "explanation": "Each grid records where a particular feature was detected. Reusing the same weights lets the model look for that feature in different places.",
       "reference": "2",
       "difficulty": "Recall"
     },
@@ -470,7 +502,7 @@
         "It guarantees that generated content is factual"
       ],
       "answer": 0,
-      "explanation": "Generative systems can create text, images, speech or other outputs.",
+      "explanation": "Generative means creating content. Examples include new text, images and speech; new content is not automatically true.",
       "reference": "2",
       "difficulty": "Conceptual"
     },
@@ -485,7 +517,7 @@
         "Retrieving a complete answer unchanged from one source"
       ],
       "answer": 2,
-      "explanation": "Predicting plausible continuations does not guarantee truth.",
+      "explanation": "The model builds text by predicting likely next pieces. A likely continuation can sound good and still be wrong.",
       "reference": "2",
       "difficulty": "Conceptual"
     },
@@ -500,7 +532,7 @@
         "Producing a clear explanation for every prediction"
       ],
       "answer": 1,
-      "explanation": "Generalization concerns performance beyond the examples used for training.",
+      "explanation": "A useful model must handle examples it did not train on. Doing that well is called generalization.",
       "reference": "2",
       "difficulty": "Recall"
     },
@@ -530,7 +562,7 @@
         "The proportion of all cases classified correctly"
       ],
       "answer": 3,
-      "explanation": "Accuracy summarizes correct classifications across the evaluated sample.",
+      "explanation": "Count all correct classifications, then divide by all cases tested. Accuracy alone can hide which kinds of errors occurred.",
       "reference": "3",
       "difficulty": "Recall"
     },
@@ -545,7 +577,7 @@
         "Specificity"
       ],
       "answer": 1,
-      "explanation": "Sensitivity measures how many genuinely affected cases are detected.",
+      "explanation": "Recall and sensitivity mean the same thing here: how many genuinely affected children the screener catches.",
       "reference": "3",
       "difficulty": "Recall"
     },
@@ -560,7 +592,7 @@
         "The proportion of positive predictions that are correct"
       ],
       "answer": 0,
-      "explanation": "Specificity concerns true negatives among people without the difficulty.",
+      "explanation": "Start with children who do not have the difficulty. Specificity is the share correctly given a negative result.",
       "reference": "3",
       "difficulty": "Recall"
     },
@@ -575,7 +607,7 @@
         "How many unaffected cases are cleared"
       ],
       "answer": 2,
-      "explanation": "Precision uses flagged cases as its denominator.",
+      "explanation": "Start with everyone the tool flags. Precision is the share of those flagged people who really have the difficulty.",
       "reference": "3",
       "difficulty": "Recall"
     },
@@ -590,7 +622,7 @@
         "The proportion of unaffected cases correctly cleared at one threshold"
       ],
       "answer": 1,
-      "explanation": "AUC summarizes discrimination; it does not establish clinical usefulness by itself.",
+      "explanation": "AUC describes how well the model separates the groups across thresholds. It does not by itself show that using the tool improves care.",
       "reference": "3",
       "difficulty": "Recall"
     },
@@ -800,7 +832,7 @@
         "Validation for similar ages, languages, dialects and disorders"
       ],
       "answer": 3,
-      "explanation": "Early studies often use specific datasets that may differ from local patients.",
+      "explanation": "A good result in one study may not transfer to your patients. Check whether similar ages, languages, dialects and disorders were tested.",
       "reference": "4",
       "difficulty": "Recall"
     },
@@ -890,7 +922,7 @@
         "Removing race as an input prevents all proxy bias"
       ],
       "answer": 2,
-      "explanation": "A convenient target may encode existing inequalities.",
+      "explanation": "Healthcare spending can be lower because access is unequal, even when need is high. Using cost as if it were need can therefore produce unfair referrals.",
       "reference": "4",
       "difficulty": "Conceptual"
     },
@@ -920,7 +952,7 @@
         "The voice itself may help reveal identity"
       ],
       "answer": 3,
-      "explanation": "Voice and language data can contain identifying and sensitive information.",
+      "explanation": "A voice can be recognizable even without a written name. Removing names is useful, but does not guarantee that a recording is anonymous.",
       "reference": "5",
       "difficulty": "Conceptual"
     },
@@ -935,7 +967,7 @@
         "Retain all recordings because they might be useful later"
       ],
       "answer": 0,
-      "explanation": "The minimum necessary data reduces unnecessary exposure.",
+      "explanation": "Share what the task actually needs. Extra records increase privacy exposure without necessarily making the result more useful.",
       "reference": "5",
       "difficulty": "Recall"
     },
@@ -1115,7 +1147,7 @@
         "Fast output and a high training-set score"
       ],
       "answer": 1,
-      "explanation": "Trustworthiness involves several dimensions beyond apparent accuracy.",
+      "explanation": "A tool needs to do its intended job and protect people. A high accuracy score is only one part of that judgment.",
       "reference": "5–6",
       "difficulty": "Recall"
     },
@@ -1145,7 +1177,7 @@
         "A correct statement expressed with low confidence"
       ],
       "answer": 1,
-      "explanation": "Hallucination can include invented facts, references or source details.",
+      "explanation": "The model fills a gap with something that sounds believable but is false or unsupported. Invented citations are one example.",
       "reference": "6",
       "difficulty": "Recall"
     },
@@ -1190,7 +1222,7 @@
         "A longer explanation removes the need for source checking"
       ],
       "answer": 0,
-      "explanation": "Explainability should enable verification, rather than simply sound convincing.",
+      "explanation": "A convincing story about an answer may itself be wrong. A useful explanation should help you check the result, rather than simply make you trust it.",
       "reference": "6",
       "difficulty": "Conceptual"
     },
@@ -1235,7 +1267,7 @@
         "A balanced independent appraisal"
       ],
       "answer": 1,
-      "explanation": "Automation bias occurs when users defer too readily to a system.",
+      "explanation": "This means accepting an automated answer too readily. Keep comparing the output with the evidence instead of assuming the computer is right.",
       "reference": "6; slides 34",
       "difficulty": "Recall"
     },
@@ -1385,7 +1417,7 @@
         "Improved representativeness"
       ],
       "answer": 1,
-      "explanation": "Performance in the development population may not transfer to a different population.",
+      "explanation": "The model learned from one kind of population, but the new group differs. Lower performance shows that its learning did not transfer well.",
       "reference": "4; slides 35",
       "difficulty": "Applied"
     },
@@ -1430,7 +1462,7 @@
         "Training, testing, deployment, billing, consent, audit"
       ],
       "answer": 0,
-      "explanation": "The six components structure what the model should produce and how.",
+      "explanation": "Say who the AI should act as, what it should make, the relevant background, the layout, the limits and any examples.",
       "reference": "7",
       "difficulty": "Recall"
     },
@@ -1520,7 +1552,7 @@
         "Repeating an answer until it sounds correct"
       ],
       "answer": 0,
-      "explanation": "Zero-shot means no demonstration examples are included.",
+      "explanation": "Zero-shot means no worked example is included. You describe the task and ask for an answer.",
       "reference": "7",
       "difficulty": "Recall"
     },
@@ -1535,7 +1567,7 @@
         "Retraining a model on a complete dataset"
       ],
       "answer": 1,
-      "explanation": "Examples help communicate the requested style or response pattern.",
+      "explanation": "Few-shot means giving a few examples. The examples help show the kind of answer or style you want.",
       "reference": "7",
       "difficulty": "Recall"
     },
@@ -1685,7 +1717,7 @@
         "Institutional approval"
       ],
       "answer": 0,
-      "explanation": "Role wording guides generation but does not verify the output.",
+      "explanation": "A role instruction changes how the model responds. It does not turn the output into verified expert advice.",
       "reference": "2, 7",
       "difficulty": "Recall"
     },
@@ -1745,7 +1777,7 @@
         "Mark it as [NOT STATED]"
       ],
       "answer": 3,
-      "explanation": "Explicit missing-data markers preserve the boundary between evidence and inference.",
+      "explanation": "A missing detail should remain visibly missing. Do not turn a guess into a recorded fact.",
       "reference": "8",
       "difficulty": "Conceptual"
     },
@@ -1790,7 +1822,7 @@
         "Next goals and home-practice frequency"
       ],
       "answer": 2,
-      "explanation": "Subjective information includes reported experience, confirmed by the clinician.",
+      "explanation": "This is what the client or caregiver reports. Make clear who supplied the information and do not invent it.",
       "reference": "8",
       "difficulty": "Recall"
     },
@@ -1805,7 +1837,7 @@
         "Measurable trials, accuracy and prompt levels"
       ],
       "answer": 3,
-      "explanation": "Objective data should be traceable to what was measured or observed.",
+      "explanation": "This is what was measured or observed, such as trial counts and prompt levels. Keep it tied to actual session data.",
       "reference": "8",
       "difficulty": "Recall"
     },
@@ -1820,7 +1852,7 @@
         "The next appointment schedule alone"
       ],
       "answer": 2,
-      "explanation": "The clinician writes or approves interpretation.",
+      "explanation": "This explains what the results mean for progress. The clinician must write or approve this interpretation.",
       "reference": "8",
       "difficulty": "Recall"
     },
@@ -1835,7 +1867,7 @@
         "Only the interpretation of the present results"
       ],
       "answer": 1,
-      "explanation": "Plans concern subsequent care and require clinician approval.",
+      "explanation": "This describes what happens next, such as goals, session frequency and home practice. The clinician approves the plan.",
       "reference": "8",
       "difficulty": "Recall"
     },
@@ -1925,14 +1957,14 @@
         "6/6, exactly 100%"
       ],
       "answer": 2,
-      "explanation": "Independent accuracy counts only I+ in the numerator and all trials in the denominator.",
+      "explanation": "Only the two I+ responses were independent. Divide 2 by all 6 trials: about 33%.",
       "reference": "8",
       "difficulty": "Recall"
     },
     {
       "id": "q116",
       "topic": "n6",
-      "question": "Using the same six trials, what is accuracy with support?",
+      "question": "A six-trial record has 2 I+, 2 P+, 1 incorrect and 1 NR. What is accuracy with support?",
       "options": [
         "2/6, approximately 33%",
         "4/6, approximately 67%",
@@ -1940,14 +1972,14 @@
         "1/6, approximately 17%"
       ],
       "answer": 1,
-      "explanation": "Supported accuracy combines independent and prompted correct responses.",
+      "explanation": "Two independent and two prompted responses were correct. Divide all 4 correct responses by 6 trials: about 67%.",
       "reference": "8",
       "difficulty": "Recall"
     },
     {
       "id": "q117",
       "topic": "n6",
-      "question": "Using the same six trials, what is prompt dependence?",
+      "question": "A six-trial record has 2 I+, 2 P+, 1 incorrect and 1 NR. What is prompt dependence?",
       "options": [
         "2/4, exactly 50%",
         "4/6, approximately 67%",
@@ -1955,14 +1987,14 @@
         "2/6, approximately 33%"
       ],
       "answer": 0,
-      "explanation": "Prompt dependence is P+ divided by all correct responses, I+ plus P+.",
+      "explanation": "Two of the four successful responses needed a prompt. Divide 2 by 4: prompt dependence is 50%.",
       "reference": "8",
       "difficulty": "Recall"
     },
     {
       "id": "q118",
       "topic": "n6",
-      "question": "Why is reporting 67% as independent accuracy wrong in this example?",
+      "question": "A six-trial record has 2 I+, 2 P+, 1 incorrect and 1 NR. Why is 67% not its independent accuracy?",
       "options": [
         "It uses all trials rather than only correct trials as the denominator",
         "It combines prompted and independent successes",
@@ -2030,7 +2062,7 @@
         "A symbol that a computer cannot process"
       ],
       "answer": 2,
-      "explanation": "Intelligence can refer to multiple abilities and is difficult to define precisely.",
+      "explanation": "The same word can carry several different meanings. The book calls intelligence a suitcase word because it includes many different abilities.",
       "reference": "25",
       "difficulty": "Applied"
     },
@@ -2105,7 +2137,7 @@
         "It recognizes the string's emotional significance"
       ],
       "answer": 1,
-      "explanation": "The encoded operations, rather than the human interpretation of labels, drive computation.",
+      "explanation": "The program follows rules about how symbols relate. It does not need the human meaning of each word to perform the encoded operations.",
       "reference": "29",
       "difficulty": "Conceptual"
     },
@@ -2210,7 +2242,7 @@
         "A unit between input and output processing"
       ],
       "answer": 3,
-      "explanation": "Hidden units form intermediate representations.",
+      "explanation": "A hidden unit helps process information between the input and the final output. Hidden does not mean it performs no calculation.",
       "reference": "43–45",
       "difficulty": "Recall"
     },
@@ -2240,7 +2272,7 @@
         "How to assign a label without comparing predictions with targets"
       ],
       "answer": 2,
-      "explanation": "It provides a way to adjust weights to reduce error.",
+      "explanation": "When the final answer is wrong, back-propagation helps determine which weights to adjust. It spreads error information backward through the network.",
       "reference": "45–46",
       "difficulty": "Recall"
     },
@@ -2300,7 +2332,7 @@
         "Knowledge derived entirely from a fixed search tree"
       ],
       "answer": 1,
-      "explanation": "The approach treats patterns across connections as central to knowledge.",
+      "explanation": "The model’s knowledge is spread across weighted connections. It is not stored only as separate readable rules.",
       "reference": "47",
       "difficulty": "Recall"
     },
@@ -2375,7 +2407,7 @@
         "An end to numerical processing"
       ],
       "answer": 1,
-      "explanation": "Earlier learning systems had faced limited data and slow computation.",
+      "explanation": "More examples and faster computers made larger learning systems practical. Earlier systems were limited by both.",
       "reference": "50",
       "difficulty": "Recall"
     },
@@ -2405,7 +2437,7 @@
         "Integrating abilities requires only increasing computer speed"
       ],
       "answer": 0,
-      "explanation": "The chapter stresses relationships among abilities, rather than merely counting them.",
+      "explanation": "Being good at separate tasks is different from combining skills flexibly. General intelligence concerns that broader ability to adapt.",
       "reference": "54–55",
       "difficulty": "Conceptual"
     },
@@ -2420,7 +2452,7 @@
         "Explaining a symbolic inference through its rules"
       ],
       "answer": 0,
-      "explanation": "Words such as thinks or understands can introduce unsupported human assumptions.",
+      "explanation": "This means describing a machine as if it had human qualities. Words like understands can suggest more than the evidence shows.",
       "reference": "56–58",
       "difficulty": "Recall"
     },
@@ -2480,7 +2512,7 @@
         "Judge expertise, duration and rules affect the outcome"
       ],
       "answer": 3,
-      "explanation": "The book critiques broad claims made from restricted contest conditions.",
+      "explanation": "A brief conversation with an inexperienced judge is a different test from a long expert interview. Test conditions affect what a result means.",
       "reference": "59–61",
       "difficulty": "Conceptual"
     },
@@ -2675,7 +2707,7 @@
         "The input region to which a unit responds"
       ],
       "answer": 3,
-      "explanation": "A detector processes information from a limited part of the visual input.",
+      "explanation": "A unit looks at a particular part of its input. That area is its receptive field.",
       "reference": "85–87",
       "difficulty": "Recall"
     },
@@ -2690,7 +2722,7 @@
         "An identical activation value at all spatial positions"
       ],
       "answer": 2,
-      "explanation": "Shared weights allow the same feature detector to operate across an image.",
+      "explanation": "The same detector is used at several locations. Shared weights let it look for a feature wherever it appears.",
       "reference": "86–88",
       "difficulty": "Recall"
     },
@@ -2825,7 +2857,7 @@
         "Five separate test images must be labeled correctly"
       ],
       "answer": 0,
-      "explanation": "Top-5 and top-1 performance answer different questions.",
+      "explanation": "The answer counts as correct if the right category is anywhere in the five guesses. That is easier than requiring the first guess to be right.",
       "reference": "98–99",
       "difficulty": "Recall"
     },
@@ -2870,7 +2902,7 @@
         "Reporting the chosen hyperparameters before evaluation"
       ],
       "answer": 2,
-      "explanation": "Repeated development using test results compromises independent evaluation.",
+      "explanation": "Using test results to keep improving the model lets the test influence development. The final score then becomes a less fair measure of new performance.",
       "reference": "101–102",
       "difficulty": "Recall"
     },
@@ -2960,7 +2992,7 @@
         "An unusually deep final hidden layer"
       ],
       "answer": 2,
-      "explanation": "Rare edge cases can be numerous and consequential.",
+      "explanation": "There can be many unusual events, even if each is rare. A model may have seen few or no examples of these events during training.",
       "reference": "117–119",
       "difficulty": "Conceptual"
     },
@@ -2990,7 +3022,7 @@
         "Background blur associated with animal photographs"
       ],
       "answer": 3,
-      "explanation": "The model used a dataset correlation rather than the intended object concept.",
+      "explanation": "Animal photographs often had blurred backgrounds. The model used that accidental clue instead of reliably recognizing the animal itself.",
       "reference": "121–122",
       "difficulty": "Recall"
     },
@@ -3020,7 +3052,7 @@
         "Learning patterns that do not transfer robustly beyond the data"
       ],
       "answer": 3,
-      "explanation": "Fragility under changed conditions can reveal overly narrow learning.",
+      "explanation": "The model fits its examples too narrowly. It may score well on familiar data but struggle when relevant conditions change.",
       "reference": "122",
       "difficulty": "Recall"
     },
@@ -3065,7 +3097,7 @@
         "Any low-confidence prediction on a valid example"
       ],
       "answer": 2,
-      "explanation": "Small targeted changes can cause confident misclassification.",
+      "explanation": "Someone deliberately changes an input to trick the model. A tiny change can sometimes produce a very confident wrong answer.",
       "reference": "128–132",
       "difficulty": "Recall"
     },
@@ -3095,7 +3127,7 @@
         "Reaching high accuracy without using any training information"
       ],
       "answer": 1,
-      "explanation": "The horse's responses depended on human cues rather than the claimed arithmetic ability.",
+      "explanation": "The horse appeared to understand arithmetic but followed subtle human cues. The lesson is that a correct answer can come from an unintended shortcut.",
       "reference": "134–135",
       "difficulty": "Recall"
     },
@@ -3215,7 +3247,7 @@
         "Ensuring system aims match the human purposes actually intended"
       ],
       "answer": 3,
-      "explanation": "A precisely optimized objective may still fail to express what people want.",
+      "explanation": "The system should pursue the goal people actually intend. Maximizing a convenient score can be harmful if that score captures the wrong goal.",
       "reference": "148",
       "difficulty": "Recall"
     },
@@ -3350,7 +3382,7 @@
         "To describe the agent's current sensor reading without future consequences"
       ],
       "answer": 2,
-      "explanation": "Useful actions can have value even without an immediate reward.",
+      "explanation": "An action can be useful because it helps reach a later reward. Its value is not limited to what it earns immediately.",
       "reference": "159–163",
       "difficulty": "Recall"
     },
@@ -3365,7 +3397,7 @@
         "Values for state-action combinations"
       ],
       "answer": 3,
-      "explanation": "Q-learning updates estimated action values through experience.",
+      "explanation": "For each situation and possible action, the table stores an estimated value. Experience updates those estimates.",
       "reference": "160",
       "difficulty": "Recall"
     },
@@ -3410,7 +3442,7 @@
         "Stopping after the first successful episode"
       ],
       "answer": 2,
-      "explanation": "Exploration can reveal better options than those already tried.",
+      "explanation": "Try an option you do not yet know much about. It might lead to a better outcome than your current favorite.",
       "reference": "164",
       "difficulty": "Recall"
     },
@@ -3425,7 +3457,7 @@
         "Choosing actions with known high estimated value"
       ],
       "answer": 3,
-      "explanation": "Exploitation uses what the agent has already learned.",
+      "explanation": "Use the option that experience currently suggests is good. Good learning balances this with trying alternatives.",
       "reference": "164",
       "difficulty": "Recall"
     },
@@ -3485,7 +3517,7 @@
         "A Monte Carlo search method without a learned network"
       ],
       "answer": 2,
-      "explanation": "A neural network approximates values that would otherwise need a large table.",
+      "explanation": "A neural network estimates action values instead of storing a separate table entry for every situation. This helps with much larger inputs.",
       "reference": "169–171",
       "difficulty": "Recall"
     },
@@ -3530,7 +3562,7 @@
         "Updating predictions using differences across successive estimates and rewards"
       ],
       "answer": 3,
-      "explanation": "It learns from changes in reward predictions over time.",
+      "explanation": "A prediction of future reward is updated using later information and rewards. Learning comes from the difference between estimates over time.",
       "reference": "172–173",
       "difficulty": "Recall"
     },
@@ -3605,7 +3637,7 @@
         "Updating every weight using labeled image errors"
       ],
       "answer": 1,
-      "explanation": "Minimax reasons about competing choices within the explored game tree.",
+      "explanation": "The program compares possible moves while allowing for an opponent who also chooses well. It uses evaluations from the explored part of the game tree.",
       "reference": "178–180",
       "difficulty": "Recall"
     },
@@ -3650,7 +3682,7 @@
         "Only the frequency of moves in an expert's written rules"
       ],
       "answer": 0,
-      "explanation": "Roll-outs provide evidence for evaluating candidate moves.",
+      "explanation": "The search tries simulated continuations and collects results. Those results help compare promising moves.",
       "reference": "186–189",
       "difficulty": "Recall"
     },
@@ -3665,7 +3697,7 @@
         "Increasing training epochs on the identical examples"
       ],
       "answer": 2,
-      "explanation": "Transfer is central to flexible human learning.",
+      "explanation": "Use something already learned to help with a different task or situation. Starting again from scratch is not the same kind of transfer.",
       "reference": "192–193",
       "difficulty": "Recall"
     },
@@ -3935,7 +3967,7 @@
         "Current processing also uses prior hidden activations"
       ],
       "answer": 3,
-      "explanation": "Recurrence supports processing sequences over time.",
+      "explanation": "The network uses information from earlier steps while processing the current word. That gives it some memory of the sequence.",
       "reference": "212–214",
       "difficulty": "Conceptual"
     },
@@ -3965,7 +3997,7 @@
         "A table of manually written definitions for every word"
       ],
       "answer": 0,
-      "explanation": "One-hot vectors identify words but do not directly express semantic similarity.",
+      "explanation": "Each word has its own position in a long vector. Only that position is active, so the code identifies the word without directly expressing its meaning.",
       "reference": "215–216",
       "difficulty": "Recall"
     },
@@ -3980,7 +4012,7 @@
         "Meaning depends only on spelling"
       ],
       "answer": 1,
-      "explanation": "Contextual patterns can support useful semantic representations.",
+      "explanation": "Words used in similar surroundings often have related meanings. The approach learns from these patterns of use.",
       "reference": "216–218",
       "difficulty": "Recall"
     },
@@ -3995,7 +4027,7 @@
         "A complete symbolic description of every sentence"
       ],
       "answer": 0,
-      "explanation": "Training on context pairs produces geometric relations among words.",
+      "explanation": "The model learns a list of numbers for each word from its contexts. Related words can end up with related numerical patterns.",
       "reference": "218–224",
       "difficulty": "Recall"
     },
@@ -4010,7 +4042,7 @@
         "They reflect biases in the language data used for training"
       ],
       "answer": 3,
-      "explanation": "Bias in representations can affect downstream language systems.",
+      "explanation": "Language data can contain social stereotypes. A model that learns those patterns can carry the same stereotypes into later tasks.",
       "reference": "225",
       "difficulty": "Conceptual"
     },
@@ -4040,7 +4072,7 @@
         "Supply a manually written rule for every grammatical structure"
       ],
       "answer": 2,
-      "explanation": "The encoder transforms the input sequence into a representation for decoding.",
+      "explanation": "The encoder turns the source sentence into a representation the system can use. The decoder uses it to produce the translation.",
       "reference": "229–230",
       "difficulty": "Recall"
     },
@@ -4055,7 +4087,7 @@
         "Rate a translation by counting reference overlaps"
       ],
       "answer": 0,
-      "explanation": "The decoder produces output in the target language.",
+      "explanation": "The decoder creates the output sequence, such as a sentence in another language. It works from the representation provided by the encoder.",
       "reference": "229–230",
       "difficulty": "Recall"
     },
@@ -4085,7 +4117,7 @@
         "Retention and forgetting of information over time"
       ],
       "answer": 3,
-      "explanation": "Learned gating mechanisms support longer-range sequence information.",
+      "explanation": "LSTM units help manage what information to keep and what to forget. This can help the model use earlier parts of a long sequence.",
       "reference": "231",
       "difficulty": "Recall"
     },
@@ -4100,7 +4132,7 @@
         "Word and phrase overlap with reference translations"
       ],
       "answer": 3,
-      "explanation": "BLEU is an automatic overlap-based translation metric.",
+      "explanation": "BLEU counts matching words and phrases between a machine translation and human references. Matching wording is useful evidence, but not a complete test of meaning.",
       "reference": "233",
       "difficulty": "Recall"
     },
@@ -4280,7 +4312,7 @@
         "Translate the paragraph into a different language"
       ],
       "answer": 0,
-      "explanation": "The answer was required to appear in the paragraph.",
+      "explanation": "The required answer is already in the paragraph. Finding it is narrower than explaining everything the passage means.",
       "reference": "254–255",
       "difficulty": "Recall"
     },
@@ -4325,7 +4357,7 @@
         "Measuring positive or negative sentiment"
       ],
       "answer": 2,
-      "explanation": "Small wording changes can change which entity a pronoun refers to.",
+      "explanation": "These small puzzles ask which person or thing a pronoun refers to. Everyday knowledge often helps choose the answer.",
       "reference": "258–261",
       "difficulty": "Recall"
     },
@@ -4385,7 +4417,7 @@
         "A limit on monitor resolution"
       ],
       "answer": 1,
-      "explanation": "The author links this gap with fragile errors and weak transfer.",
+      "explanation": "A system can produce a good result on a task without showing broad understanding. The book uses barrier of meaning for that gap.",
       "reference": "267",
       "difficulty": "Recall"
     },
@@ -4445,7 +4477,7 @@
         "The fixed numerical threshold of a perceptron"
       ],
       "answer": 1,
-      "explanation": "Social understanding helps predict actions and interpret situations.",
+      "explanation": "People think about what others believe, want and feel. This helps them make sense of social situations.",
       "reference": "269–270",
       "difficulty": "Recall"
     },
@@ -4460,7 +4492,7 @@
         "A representation used to anticipate how a situation may unfold"
       ],
       "answer": 3,
-      "explanation": "Mental models support predictions and imagined possibilities.",
+      "explanation": "A mental model is an idea of how a situation works. It helps a person imagine what could happen next.",
       "reference": "270–272",
       "difficulty": "Recall"
     },
@@ -4520,7 +4552,7 @@
         "Copying a category label without recognizing shared relations"
       ],
       "answer": 0,
-      "explanation": "Abstraction can span situations with different appearances.",
+      "explanation": "Look past differences in appearance to notice a shared pattern. That lets a new case fit a broader concept.",
       "reference": "275–278",
       "difficulty": "Recall"
     },
@@ -4535,7 +4567,7 @@
         "Perceiving a common essence across things"
       ],
       "answer": 3,
-      "explanation": "Analogies depend on relevant shared structure rather than surface identity.",
+      "explanation": "An analogy connects situations through a relevant shared relationship. They do not need to look alike in every detail.",
       "reference": "278–279",
       "difficulty": "Conceptual"
     },
@@ -4677,7 +4709,7 @@
     {
       "id": "q299",
       "topic": "b15",
-      "question": "Why might ppqqrrss become ppqqrrtt in the same analogy?",
+      "question": "If abc becomes abd, why might the analogous change turn ppqqrrss into ppqqrrtt?",
       "options": [
         "The whole string must be deleted",
         "A pair of letters plays the role of one letter",
@@ -4700,7 +4732,7 @@
         "Discarding all prior concepts before solving a problem"
       ],
       "answer": 1,
-      "explanation": "Flexible mappings can preserve an abstract relation despite different surface forms.",
+      "explanation": "A concept can change its role to fit a new analogy. For example, a pair of letters can act like one letter in a pattern.",
       "reference": "293–295",
       "difficulty": "Recall"
     },
@@ -4760,7 +4792,7 @@
         "Interactions with the world are irrelevant once data are collected"
       ],
       "answer": 2,
-      "explanation": "The book presents embodiment as a debated hypothesis the author finds compelling.",
+      "explanation": "This is the idea that interacting physically with the world may matter for human-level intelligence. The book presents it as a hypothesis.",
       "reference": "302–303",
       "difficulty": "Conceptual"
     },
@@ -4835,7 +4867,7 @@
         "A method for transferring learned driving skills without validation"
       ],
       "answer": 1,
-      "explanation": "A bounded operating domain can make a difficult task more manageable.",
+      "explanation": "The vehicle works within a defined area. This narrows the task, but does not remove every difficult situation.",
       "reference": "308–309",
       "difficulty": "Recall"
     },
@@ -4925,7 +4957,7 @@
         "Only slow improvement on conventional benchmarks"
       ],
       "answer": 0,
-      "explanation": "The author stresses reliability, limits and failures on unusual cases.",
+      "explanation": "A system can work well many times and then fail on an unusual event. The author worries about giving such systems more control than their reliability justifies.",
       "reference": "318–319",
       "difficulty": "Recall"
     },
@@ -5603,6 +5635,3306 @@
       "explanation": "Mitchell presents a critical exploration rather than a complete history or technical manual.",
       "reference": "19–20",
       "difficulty": "Recall"
+    },
+    {
+      "id": "q361",
+      "topic": "n1",
+      "question": "What is an algorithm in simple terms?",
+      "options": [
+        "A sequence of steps for solving a task",
+        "The error rate measured during testing",
+        "The final category predicted by a model",
+        "The examples used for training"
+      ],
+      "answer": 0,
+      "explanation": "An algorithm is a set of instructions. A model follows computational steps to turn an input into an output.",
+      "reference": "2",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q362",
+      "topic": "n1",
+      "question": "Why can a learned model be accurate yet difficult to explain?",
+      "options": [
+        "Its predictions contain no numerical calculations",
+        "Its accuracy means every internal step is already understood",
+        "Its decision rules are spread across many learned numbers",
+        "Its training labels are always human-readable rules"
+      ],
+      "answer": 2,
+      "explanation": "A model can give the right answer without offering a clear reason a person can inspect. Correctness and explainability are different qualities.",
+      "reference": "1–2",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q363",
+      "topic": "n2",
+      "question": "Which four application areas are grouped together in the lecture notes?",
+      "options": [
+        "Screening, transcription, voice analysis and AAC",
+        "Diagnosis, billing, drug prescribing and surgery",
+        "Translation, publishing, encryption and data storage",
+        "Screening, consent, prompting and legal review"
+      ],
+      "answer": 0,
+      "explanation": "The notes group uses by what they do: flag risk, turn speech into text, examine voice signals and help communication.",
+      "reference": "3–4",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q364",
+      "topic": "n2",
+      "question": "What is the trade-off when a screener catches more at-risk children but also flags unaffected children?",
+      "options": [
+        "Fewer missed cases can come with more false alarms",
+        "More positive flags prove greater diagnostic certainty",
+        "Higher sensitivity always means higher specificity",
+        "A flagged child no longer needs assessment"
+      ],
+      "answer": 0,
+      "explanation": "Catching more possible cases is useful, but some flags may be wrong. A follow-up assessment separates risk from diagnosis.",
+      "reference": "3",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q365",
+      "topic": "n3",
+      "question": "Which framework do the notes mention in their discussion of high-risk medical AI?",
+      "options": [
+        "BLEU",
+        "The Turing test",
+        "The EU AI Act",
+        "WordNet"
+      ],
+      "answer": 2,
+      "explanation": "The notes name the EU AI Act in this context. This question checks the supplied notes, rather than giving an updated legal ruling.",
+      "reference": "5",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q366",
+      "topic": "n3",
+      "question": "Which US body is mentioned in the notes in relation to AI in medical devices?",
+      "options": [
+        "The ImageNet organizers",
+        "The FDA",
+        "The Dartmouth workshop committee",
+        "The WHO"
+      ],
+      "answer": 1,
+      "explanation": "The notes connect the FDA with medical-device regulation in the United States. Legal applicability still depends on the actual device and setting.",
+      "reference": "5",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q367",
+      "topic": "n3",
+      "question": "Which ethical idea means trying to help while avoiding harm?",
+      "options": [
+        "Beneficence and non-maleficence",
+        "Exploration and exploitation",
+        "Precision and recall",
+        "Encoding and decoding"
+      ],
+      "answer": 0,
+      "explanation": "Beneficence means doing good; non-maleficence means avoiding harm. The notes connect them with real-world validation and continuing checks.",
+      "reference": "5",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q368",
+      "topic": "n3",
+      "question": "What does the WHO principle about human well-being emphasize in the notes?",
+      "options": [
+        "Only the cheapest possible service",
+        "Only the highest model accuracy",
+        "Only the needs of the software developer",
+        "Safety and the public interest"
+      ],
+      "answer": 3,
+      "explanation": "A useful health tool should protect people and serve their interests. A high score alone does not establish that it does so.",
+      "reference": "5",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q369",
+      "topic": "n4",
+      "question": "What does validity mean for an AI tool in the notes?",
+      "options": [
+        "It gives the same confident answer to every user",
+        "It works for the purpose it is intended to serve",
+        "It has a large number of learned weights",
+        "It is popular in many countries"
+      ],
+      "answer": 1,
+      "explanation": "First ask what the tool is supposed to do. Then check whether evidence shows it can do that particular job.",
+      "reference": "5–6",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q370",
+      "topic": "n4",
+      "question": "Why should checks continue after an AI tool is introduced?",
+      "options": [
+        "Real patients and conditions can differ from the original study",
+        "Monitoring is needed only before the first use",
+        "One successful pilot guarantees every later result",
+        "The developer's original accuracy can never change"
+      ],
+      "answer": 0,
+      "explanation": "A tool may work differently with new people or recording conditions. Continued checking helps detect those problems.",
+      "reference": "5–6",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q371",
+      "topic": "n5",
+      "question": "Which follow-up best makes a technical draft easier for a caregiver to use?",
+      "options": [
+        "Remove all instructions and keep only the diagnosis",
+        "Make the answer longer without changing the wording",
+        "Rewrite it in simple everyday language and explain the steps",
+        "Add more specialist terms without definitions"
+      ],
+      "answer": 2,
+      "explanation": "A caregiver needs clear actions and familiar words. Rewriting for the audience can make the same activity easier to follow.",
+      "reference": "7",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q372",
+      "topic": "n6",
+      "question": "An AI draft changes the target sound and the child's age. What type of error needs correction?",
+      "options": [
+        "An example of successful de-identification",
+        "Terminology and case-detail errors",
+        "A correct clinical interpretation",
+        "A harmless format preference"
+      ],
+      "answer": 1,
+      "explanation": "Check the draft against the actual session. Wrong targets or ages can make a polished note describe the wrong case.",
+      "reference": "9",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q373",
+      "topic": "l1",
+      "question": "Which statement best explains 'AI is an umbrella term'?",
+      "options": [
+        "AI means only large language models",
+        "AI means only supervised learning",
+        "AI includes several approaches, rather than one single technology",
+        "AI means only one type of neural network"
+      ],
+      "answer": 2,
+      "explanation": "Think of AI as a large family. Rule-based systems, machine learning and generative tools belong to different parts of that family.",
+      "reference": "slide 7",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q374",
+      "topic": "l1",
+      "question": "How does the deck distinguish human clinical reasoning from AI pattern recognition?",
+      "options": [
+        "Both necessarily use the same reasoning process",
+        "Clinicians combine patient context with judgment; AI computes patterns in data",
+        "AI's confidence removes the need for patient context",
+        "Human reasoning consists only of matching numerical patterns"
+      ],
+      "answer": 1,
+      "explanation": "A model can find a pattern in a recording. The clinician must decide what that pattern means for this particular person.",
+      "reference": "slides 11–12",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q375",
+      "topic": "l1",
+      "question": "A post-stroke recording is analyzed without considering history or therapy notes. What should the SLP add?",
+      "options": [
+        "Only a second copy of the recording",
+        "The wider clinical context before interpreting the output",
+        "An assumption that all stroke cases are identical",
+        "A decision based only on the model's confidence"
+      ],
+      "answer": 1,
+      "explanation": "The deck's case includes more than speech data. History, assessment and observations help the clinician judge an AI result.",
+      "reference": "slides 3–4",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q376",
+      "topic": "l1",
+      "question": "What does shared decision-making add to SLP care?",
+      "options": [
+        "The model alone selects every goal",
+        "Only the developer chooses the therapy plan",
+        "The patient's priorities and preferences inform decisions with the clinician",
+        "The patient's views are replaced by a score"
+      ],
+      "answer": 2,
+      "explanation": "Care involves a person, not just a dataset. Shared decisions include what matters to that person.",
+      "reference": "slide 12",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q377",
+      "topic": "l1",
+      "question": "What is the difference between an AI tool and an autonomous decision-maker in the deck?",
+      "options": [
+        "A tool must use written rules rather than learning",
+        "An autonomous system never needs validation",
+        "A tool supplies information for interpretation; autonomous output directly drives action",
+        "A tool always has lower accuracy"
+      ],
+      "answer": 2,
+      "explanation": "The distinction is about how the output is used. Information that directly triggers action requires stronger evidence and oversight.",
+      "reference": "slide 19",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q378",
+      "topic": "l1",
+      "question": "Which stage comes before the AI prediction in the deck's pattern-recognition framework?",
+      "options": [
+        "Making the final clinical decision",
+        "Treating the prediction as clinical truth",
+        "Signing the care plan",
+        "Processing the input to identify patterns or features"
+      ],
+      "answer": 3,
+      "explanation": "The model first processes information such as a recording. It then uses patterns in that information to produce an output.",
+      "reference": "slides 23–24",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q379",
+      "topic": "l1",
+      "question": "What do labels contribute in the deck's speech-learning example?",
+      "options": [
+        "They provide the patient's final treatment plan",
+        "They replace the need to test new samples",
+        "They prove the model understands all communication",
+        "They tell the model the expected category during training"
+      ],
+      "answer": 3,
+      "explanation": "A label gives the learning system an example of the desired answer. Testing later checks whether it can handle new samples.",
+      "reference": "slides 26–27",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q380",
+      "topic": "l1",
+      "question": "Which simplified sequence describes the deep-learning speech example?",
+      "options": [
+        "Speech signal, neural network, learned patterns, prediction",
+        "Clinical decision, voice recording, consent, neural network",
+        "Speech signal, final diagnosis, consent, prediction",
+        "Prediction, recording, final diagnosis, training label"
+      ],
+      "answer": 0,
+      "explanation": "The network processes a speech signal to produce a prediction. Clinical interpretation comes after that output.",
+      "reference": "slides 28–29",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q381",
+      "topic": "l1",
+      "question": "Which task in the deck uses text summarization?",
+      "options": [
+        "Creating a shorter draft from a longer language sample or document",
+        "Selecting a robot's movement by reward",
+        "Detecting edges in a photograph",
+        "Measuring jitter in a voice signal"
+      ],
+      "answer": 0,
+      "explanation": "Summarization makes text shorter while trying to keep the main information. The result still needs checking for missing or changed meaning.",
+      "reference": "slide 30",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q382",
+      "topic": "l1",
+      "question": "Why should an SLP understand AI even without building a model?",
+      "options": [
+        "To judge its claims, limits and clinical usefulness",
+        "To accept every automated recommendation",
+        "To replace every patient interaction with a score",
+        "To transfer responsibility to the developer"
+      ],
+      "answer": 0,
+      "explanation": "You do not need to write the software to ask good questions about it. Understanding its limits helps you use it thoughtfully.",
+      "reference": "slide 13",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q383",
+      "topic": "l1",
+      "question": "A tool performs well on one clinic's adult data. What should be asked before using it with local children?",
+      "options": [
+        "Is the adult accuracy repeated in the advertisement?",
+        "Does it use the word intelligent in its name?",
+        "Does it produce the same report layout?",
+        "Were similar children, languages and settings represented in validation?"
+      ],
+      "answer": 3,
+      "explanation": "The new group may differ from the original one. Relevant validation helps show whether the result is likely to transfer.",
+      "reference": "slides 34–36",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q384",
+      "topic": "l1",
+      "question": "How should fluent patient-education text from an LLM be treated?",
+      "options": [
+        "As a draft whose clinical statements need verification",
+        "As a final clinical judgment",
+        "As verified information because it is easy to read",
+        "As reliable evidence of understanding"
+      ],
+      "answer": 0,
+      "explanation": "Easy-to-read text can still contain mistakes. Readability and accuracy must be checked separately.",
+      "reference": "slides 31, 33–34",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q385",
+      "topic": "b1",
+      "question": "What was a central conjecture behind the Dartmouth proposal?",
+      "options": [
+        "Features of intelligence could be described precisely enough for a machine to simulate them",
+        "Computers could perform only arithmetic and no other task",
+        "A single summer would provide a complete scientific definition of consciousness",
+        "Only biological neurons could ever process symbols"
+      ],
+      "answer": 0,
+      "explanation": "The proposal treated intelligent behavior as something that could be studied and described. It was an ambitious starting idea, not a completed proof.",
+      "reference": "23",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q386",
+      "topic": "b1",
+      "question": "Which four pioneers are grouped as the 'big four' in the chapter?",
+      "options": [
+        "Lenat, Cope, Samuel and Bongard",
+        "Turing, Rosenblatt, LeCun and Hinton",
+        "Hubel, Wiesel, Fukushima and LeCun",
+        "McCarthy, Minsky, Newell and Simon"
+      ],
+      "answer": 3,
+      "explanation": "These four helped shape the early field. The chapter connects them with the Dartmouth meeting and later AI laboratories.",
+      "reference": "24",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q387",
+      "topic": "b1",
+      "question": "In the river-crossing GPS example, what constrains an operator?",
+      "options": [
+        "A learned visual feature map",
+        "Rules defining which moves are allowed",
+        "A reward assigned only after a full game",
+        "The human meaning of the word boat alone"
+      ],
+      "answer": 1,
+      "explanation": "An operator can move people, but rules restrict the move. For example, the boat's capacity limits how many can cross at once.",
+      "reference": "28–29",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q388",
+      "topic": "b1",
+      "question": "How are positive and negative examples used in the perceptron example?",
+      "options": [
+        "They show instances of the target category and of other categories",
+        "They are examples with high and low image brightness only",
+        "They are examples collected before and after publication",
+        "They are always correct and incorrect predictions from the same model"
+      ],
+      "answer": 0,
+      "explanation": "An 8 detector needs examples of 8s and examples that are not 8s. Both help it learn where the category boundary lies.",
+      "reference": "34–35",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q389",
+      "topic": "b1",
+      "question": "If the perceptron already gives the correct answer, what does the described learning rule do?",
+      "options": [
+        "Removes the example from the test set",
+        "Reverses every weight",
+        "Leaves its weights and threshold unchanged for that example",
+        "Changes the correct label to another category"
+      ],
+      "answer": 2,
+      "explanation": "In this simple rule, changes are driven by mistakes. A correct answer does not require a correction for that example.",
+      "reference": "35",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q390",
+      "topic": "b1",
+      "question": "Why did the absence of a general multilayer training method matter historically?",
+      "options": [
+        "It showed symbolic rules could learn without examples",
+        "It prevented computers from representing numerical inputs",
+        "It proved all multilayer networks could solve only one task",
+        "It made it hard to learn the many weights in multilayer networks"
+      ],
+      "answer": 3,
+      "explanation": "Adding layers can make a model more capable in principle. Researchers still needed a practical way to train those layers.",
+      "reference": "38–39",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q391",
+      "topic": "b2",
+      "question": "In the digit network, what does each output unit correspond to?",
+      "options": [
+        "One hidden-layer weight",
+        "One possible digit category",
+        "One pixel location",
+        "One training image"
+      ],
+      "answer": 1,
+      "explanation": "There are ten digit categories, so the example has ten outputs. The largest output indicates the predicted digit.",
+      "reference": "43–45",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q392",
+      "topic": "b2",
+      "question": "What do hidden-unit activations become during a forward pass?",
+      "options": [
+        "Independent test labels",
+        "A replacement for all learned weights",
+        "Inputs to units in the next layer",
+        "A new set of human-written rules"
+      ],
+      "answer": 2,
+      "explanation": "Information moves forward through the layers. One layer's results help the next layer calculate its results.",
+      "reference": "44–45",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q393",
+      "topic": "b2",
+      "question": "What does 'distributed' emphasize in the connectionist account?",
+      "options": [
+        "Every computer must connect to the internet",
+        "A network's knowledge exists only in its output name",
+        "Knowledge is represented across a pattern of units and connections",
+        "Each concept must occupy one human-readable rule"
+      ],
+      "answer": 2,
+      "explanation": "The information is spread across many numerical relationships. It is not simply a separate written fact stored in one place.",
+      "reference": "47",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q394",
+      "topic": "b2",
+      "question": "Why are perceptual or motor tasks attractive for subsymbolic approaches in the chapter?",
+      "options": [
+        "Such systems require no experience",
+        "These tasks always have only one possible input",
+        "All physical skills can be completely listed in a short rule set",
+        "People often cannot state the exact rules they use to perform them"
+      ],
+      "answer": 3,
+      "explanation": "You may recognize a face or catch an object without explaining every step. Learning from examples can help where explicit rules are hard to write.",
+      "reference": "48–49",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q395",
+      "topic": "b2",
+      "question": "How did MYCIN obtain much of its explicit medical knowledge?",
+      "options": [
+        "Programmers interviewed expert physicians to develop rules",
+        "It clustered unlabeled photographs",
+        "It read all medical papers without human preparation",
+        "It learned by playing itself at a medical game"
+      ],
+      "answer": 0,
+      "explanation": "People had to draw knowledge out of experts and encode it. This illustrates the human work behind a rule-based system.",
+      "reference": "48–49",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q396",
+      "topic": "b2",
+      "question": "Why was the internet important to the later rise of machine learning?",
+      "options": [
+        "It eliminated the need for computing power",
+        "It supplied far larger amounts of usable data",
+        "It solved the problem of general intelligence by itself",
+        "It made all data perfectly labeled and unbiased"
+      ],
+      "answer": 1,
+      "explanation": "Learning systems need examples. Growing online collections made many more examples available, although quality and labeling still mattered.",
+      "reference": "50",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q397",
+      "topic": "b3",
+      "question": "In the chapter's historical account, what does Moore's law describe?",
+      "options": [
+        "An approximate doubling of chip components over time",
+        "A fixed number of hidden layers in every network",
+        "A guaranteed doubling of human understanding each year",
+        "A rule that every AI system is unbiased"
+      ],
+      "answer": 0,
+      "explanation": "It describes a hardware trend discussed in the book. Faster hardware alone is not the same as a complete account of intelligence.",
+      "reference": "66–67",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q398",
+      "topic": "b3",
+      "question": "In a doubling sequence that starts with two grains, how many are on the fourth square?",
+      "options": [
+        "32",
+        "8",
+        "12",
+        "16"
+      ],
+      "answer": 3,
+      "explanation": "The sequence is 2, 4, 8, 16. Repeated doubling grows much faster than adding the same amount each time.",
+      "reference": "64–65; applied calculation",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q399",
+      "topic": "b3",
+      "question": "Who took opposite sides in the book's wager about a Turing test by 2029?",
+      "options": [
+        "Arthur Samuel and David Cope",
+        "Marvin Minsky and Frank Rosenblatt",
+        "Yann LeCun and Fei-Fei Li",
+        "Ray Kurzweil and Mitchell Kapor"
+      ],
+      "answer": 3,
+      "explanation": "Kurzweil expected a machine to pass; Kapor was skeptical. The chapter describes their historical wager and its planned deadline.",
+      "reference": "70–72",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q400",
+      "topic": "b3",
+      "question": "Why did the wager specify long interviews and multiple judges?",
+      "options": [
+        "To replace conversation with an image test",
+        "To guarantee that any chatbot would pass",
+        "To make the test conditions harder to satisfy with superficial tricks",
+        "To remove all human comparison"
+      ],
+      "answer": 2,
+      "explanation": "The result depends on the test rules. Longer, carefully designed conversations provide a stricter challenge than brief exchanges.",
+      "reference": "71–72",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q401",
+      "topic": "b3",
+      "question": "What did Kapor emphasize about learning in the wager discussion?",
+      "options": [
+        "Only arithmetic speed matters to thought",
+        "Bodies, emotions and experience shape human knowledge",
+        "All important knowledge is explicitly written in books",
+        "Faster reading automatically supplies all common sense"
+      ],
+      "answer": 1,
+      "explanation": "People learn through living in the world, not just reading descriptions. Kapor questioned whether text alone could supply that experience.",
+      "reference": "72–73",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q402",
+      "topic": "b3",
+      "question": "What objection do the skeptics raise about extrapolating hardware growth to intelligence?",
+      "options": [
+        "Hardware trends prove that brains cannot be studied",
+        "Faster chips make all learning impossible",
+        "A past forecasting success makes every later forecast certain",
+        "Software and understanding do not necessarily improve at the same exponential rate"
+      ],
+      "answer": 3,
+      "explanation": "More computing power is useful. It does not by itself tell us how to build the missing abilities.",
+      "reference": "73–74",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q403",
+      "topic": "b4",
+      "question": "What is occlusion in the chapter's object-recognition discussion?",
+      "options": [
+        "An image having no pixels",
+        "An object changing its category label",
+        "A network having too many output units",
+        "Part of an object being hidden by something else"
+      ],
+      "answer": 3,
+      "explanation": "A fence or a person can hide part of a dog. A recognizer must still deal with the incomplete view.",
+      "reference": "79",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q404",
+      "topic": "b4",
+      "question": "What effect can prior knowledge have on human vision, according to the chapter?",
+      "options": [
+        "It can influence what a person perceives",
+        "It is completely separate from perception",
+        "It removes all visual illusions",
+        "It matters only after an image has been named"
+      ],
+      "answer": 0,
+      "explanation": "People do not process a picture using raw pixels alone. Expectations and knowledge also shape interpretation.",
+      "reference": "82–83",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q405",
+      "topic": "b4",
+      "question": "What is the difference between feed-forward and feedback connections here?",
+      "options": [
+        "Feedback means the final answer is always correct",
+        "Both always connect a network directly to its training labels",
+        "Feed-forward goes toward higher layers; feedback returns toward lower layers",
+        "Feed-forward means no intermediate computation occurs"
+      ],
+      "answer": 2,
+      "explanation": "The two directions allow different flows of information. The book notes that the brain has substantial feedback connections.",
+      "reference": "82–83",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q406",
+      "topic": "b4",
+      "question": "In the ConvNet example, what does an activation indicate?",
+      "options": [
+        "The number of human annotators",
+        "A complete explanation of the scene's meaning",
+        "How strongly a detector responds to its input",
+        "The size of the independent test set"
+      ],
+      "answer": 2,
+      "explanation": "A high activation means the unit responded strongly. It is a numerical response, not a full human-style interpretation.",
+      "reference": "84–88",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q407",
+      "topic": "b4",
+      "question": "What does moving the same feature detector across an image help achieve?",
+      "options": [
+        "A separate human-written rule for every pixel",
+        "Detection of a feature at different locations",
+        "A guarantee that every object is understood",
+        "Removal of all training examples"
+      ],
+      "answer": 1,
+      "explanation": "An edge can occur in many places. Reusing the detector allows the model to look for it across the image.",
+      "reference": "85–88",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q408",
+      "topic": "b4",
+      "question": "During ConvNet training, how are predicted category scores used?",
+      "options": [
+        "Compared with target outputs to guide weight changes",
+        "Accepted as new ground-truth labels without checking",
+        "Used only to rename the input files",
+        "Stored without affecting any later calculation"
+      ],
+      "answer": 0,
+      "explanation": "The model compares its output with the expected category. The error guides small changes to its weights.",
+      "reference": "90–91",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q409",
+      "topic": "b5",
+      "question": "How were training and test images used in the benchmark described?",
+      "options": [
+        "Training labels were hidden but test labels guided all updates",
+        "Training images supported learning; separate test images measured performance",
+        "All test images were used repeatedly to fit the model",
+        "The test set contained only correctly predicted images"
+      ],
+      "answer": 1,
+      "explanation": "Keeping examples separate helps reveal whether learning works beyond the training data.",
+      "reference": "94–95",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q410",
+      "topic": "b5",
+      "question": "What relationship does a WordNet chain such as cappuccino to coffee illustrate?",
+      "options": [
+        "A list ordered only by word length",
+        "A more specific term linked to a broader category",
+        "A chronological list of training events",
+        "A sequence of network weight updates"
+      ],
+      "answer": 1,
+      "explanation": "Cappuccino is a kind of coffee, and coffee is a kind of beverage. These category links helped organize ImageNet.",
+      "reference": "95–96",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q411",
+      "topic": "b5",
+      "question": "Why was using image-search results alone insufficient for ImageNet?",
+      "options": [
+        "Human checking would make the categories less meaningful",
+        "Returned pictures could be irrelevant or incorrectly matched to the noun",
+        "Every returned picture lacked any visual content",
+        "Search engines already supplied perfect task labels"
+      ],
+      "answer": 1,
+      "explanation": "A search for a term can return mixed results. Human checking helped decide which pictures truly belonged.",
+      "reference": "96–97",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q412",
+      "topic": "b5",
+      "question": "Why can repeated test-server submissions become a problem?",
+      "options": [
+        "They let test feedback influence later model choices",
+        "They remove the need to report hyperparameters",
+        "They prove the model has learned the right concepts",
+        "They automatically add more independent test examples"
+      ],
+      "answer": 0,
+      "explanation": "A test stops being a clean final check when developers keep adjusting their model to its results.",
+      "reference": "101–102",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q413",
+      "topic": "b5",
+      "question": "Does a correct category prove the network used the intended object in the image?",
+      "options": [
+        "No, correct categories are never useful",
+        "Yes, especially when top-5 accuracy is high",
+        "No, it may rely on another correlated part of the image",
+        "Yes, a correct label reveals the exact evidence used"
+      ],
+      "answer": 2,
+      "explanation": "A correct answer can come from the wrong cue. Looking at where and why a model responds helps test this.",
+      "reference": "108",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q414",
+      "topic": "b5",
+      "question": "What ability is needed beyond naming objects to understand a scene?",
+      "options": [
+        "Only more copies of the same photograph",
+        "Only a higher score on an unchanged label task",
+        "Knowledge of relationships, events and possible intentions",
+        "Only a longer list of category names"
+      ],
+      "answer": 2,
+      "explanation": "Understanding a scene includes how its parts relate. Naming dog and person does not explain what is happening between them.",
+      "reference": "109–110",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q415",
+      "topic": "b6",
+      "question": "What does the learning rate control in the chapter's discussion?",
+      "options": [
+        "Which clinical diagnosis is correct",
+        "How large a weight change is made during learning",
+        "How many words are in the vocabulary",
+        "How long the patient has had a difficulty"
+      ],
+      "answer": 1,
+      "explanation": "The learning rate affects the size of learning steps. It is one of the settings chosen for the training process.",
+      "reference": "112–113",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q416",
+      "topic": "b6",
+      "question": "Why can a robot's household photographs challenge a web-trained classifier?",
+      "options": [
+        "Web images guarantee transfer to every setting",
+        "They necessarily contain new object categories only",
+        "The robot's camera removes all pixels",
+        "Their viewpoints and visual conditions differ from typical web photographs"
+      ],
+      "answer": 3,
+      "explanation": "The same object may look different from a low or unusual angle. Changing the source of images can reveal weak generalization.",
+      "reference": "122",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q417",
+      "topic": "b6",
+      "question": "In the kitchen example, why could the model confuse a man's category?",
+      "options": [
+        "It learned a training-data association between kitchens and women",
+        "It applied a verified logical rule about people",
+        "It proved the kitchen caused the person's gender",
+        "It understood the person's identity from the room"
+      ],
+      "answer": 0,
+      "explanation": "The model used a background association. That shortcut can create unfair errors when the association does not fit a new image.",
+      "reference": "125",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q418",
+      "topic": "b6",
+      "question": "Why is removing one offensive category only a limited repair for a biased recognizer?",
+      "options": [
+        "It does not show that other biased associations have been fixed",
+        "It guarantees equal performance for every group",
+        "It replaces the training data with a representative dataset",
+        "It explains all of the network's decisions"
+      ],
+      "answer": 0,
+      "explanation": "Hiding one label may stop one visible error. The deeper problem in the data or learned patterns may remain.",
+      "reference": "123–125",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q419",
+      "topic": "b6",
+      "question": "What is notable about adversarial examples that transfer between networks?",
+      "options": [
+        "A change designed against one model can also fool another model",
+        "They prove that all networks have identical weights",
+        "They affect only the exact model used to create them",
+        "They require the same training images in every case"
+      ],
+      "answer": 0,
+      "explanation": "Different models can share vulnerabilities. Changing the architecture alone may not remove the problem.",
+      "reference": "128–129",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q420",
+      "topic": "b6",
+      "question": "Why does the book compare visual illusions with AI adversarial errors cautiously?",
+      "options": [
+        "An adversarial input is necessarily visible to every human",
+        "Visual illusions show humans cannot recognize any object",
+        "Any human illusion proves every AI error is harmless",
+        "Both show errors, but the mechanisms and kinds of understanding may differ"
+      ],
+      "answer": 3,
+      "explanation": "Humans can be fooled too. That fact alone does not mean a model perceives or understands a scene in the same way.",
+      "reference": "133–135",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q421",
+      "topic": "b7",
+      "question": "How might AI support a person with a visual disability in the chapter's examples?",
+      "options": [
+        "Read printed text or describe useful visual information",
+        "Guarantee every generated description is correct",
+        "Ensure an image contains no private information",
+        "Replace every need to check an important output"
+      ],
+      "answer": 0,
+      "explanation": "Accessibility is a real benefit. It still depends on reliable output that is useful to the person.",
+      "reference": "138–139",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q422",
+      "topic": "b7",
+      "question": "Why can a false face-recognition match be serious in law enforcement?",
+      "options": [
+        "It is harmless if the overall accuracy is high",
+        "It always gets corrected before anyone acts",
+        "It can wrongly connect a person with suspicion or an investigation",
+        "It affects only the photograph's file size"
+      ],
+      "answer": 2,
+      "explanation": "A wrong identity can have real consequences. The seriousness of the use matters alongside the average score.",
+      "reference": "142–144",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q423",
+      "topic": "b7",
+      "question": "Which rights are highlighted in the face-recognition discussion?",
+      "options": [
+        "Only control over image resolution",
+        "Only a right to faster computation",
+        "Privacy and freedom of expression",
+        "Only ownership of the software code"
+      ],
+      "answer": 2,
+      "explanation": "Surveillance can affect how freely people move and speak. That is why the discussion includes civil rights as well as accuracy.",
+      "reference": "144–145",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q424",
+      "topic": "b7",
+      "question": "Why does the book discuss the limits of industry self-regulation?",
+      "options": [
+        "Only companies can understand public interests",
+        "The creators of tools should not be the only voices deciding acceptable risks",
+        "Every technical risk has already been solved",
+        "Public oversight always makes software less accurate"
+      ],
+      "answer": 1,
+      "explanation": "Developers have important knowledge, but affected people and public institutions also have interests in the rules.",
+      "reference": "145–147",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q425",
+      "topic": "b7",
+      "question": "What did Asimov's Runaround example demonstrate?",
+      "options": [
+        "Three laws remove all ambiguity from real situations",
+        "Following simple laws can trap a robot in conflicting demands",
+        "Moral decisions can be replaced with a larger training set alone",
+        "A robot must always ignore human instructions"
+      ],
+      "answer": 1,
+      "explanation": "A rule may push the robot toward one action while another rule pushes it away. Real situations can expose conflicts in simple instructions.",
+      "reference": "147–148",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q426",
+      "topic": "b7",
+      "question": "What question should be asked before choosing a system's objective?",
+      "options": [
+        "Will a higher number always prove the system is beneficial?",
+        "Does this measurable target actually express what people want?",
+        "Can the target be optimized without considering consequences?",
+        "Can the developer avoid stating any intended purpose?"
+      ],
+      "answer": 1,
+      "explanation": "A system can optimize the wrong thing very well. Choosing the right aim is part of the value-alignment problem.",
+      "reference": "148–150",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q427",
+      "topic": "b8",
+      "question": "What is an episode in the Rosie learning example?",
+      "options": [
+        "One label for a speech sample",
+        "A single stored weight",
+        "The full set of every possible state",
+        "One sequence of actions ending with the task outcome or stopping point"
+      ],
+      "answer": 3,
+      "explanation": "The robot tries a sequence, then tries again. Learning builds across many such episodes.",
+      "reference": "156–163",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q428",
+      "topic": "b8",
+      "question": "Why does Rosie initially choose actions at random?",
+      "options": [
+        "She has not yet learned which actions are valuable in each state",
+        "She already knows the shortest route to the ball",
+        "Random action guarantees an immediate reward",
+        "Her state contains a complete plan"
+      ],
+      "answer": 0,
+      "explanation": "At the beginning, the action values provide little guidance. Trying actions creates experience from which to learn.",
+      "reference": "156–158",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q429",
+      "topic": "b8",
+      "question": "What makes the book's Rosie state representation unusually simple?",
+      "options": [
+        "It assumes she knows exactly how many steps she is from the ball",
+        "It includes every possible camera image and sound",
+        "It has no connection to the ball's location",
+        "It changes the meaning of a step after every action"
+      ],
+      "answer": 0,
+      "explanation": "Real robots usually have uncertain observations. The example removes much of that difficulty so the learning idea is easier to see.",
+      "reference": "155–156, 163",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q430",
+      "topic": "b8",
+      "question": "Why might a real robot's Forward action have an uncertain result?",
+      "options": [
+        "The reward always arrives before movement",
+        "All real movements have exactly the same result",
+        "Terrain or obstacles can change how far or how safely it moves",
+        "Action values cannot contain any numbers"
+      ],
+      "answer": 2,
+      "explanation": "An instruction is not a guarantee of a physical outcome. The robot must handle variability in the real world.",
+      "reference": "163",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q431",
+      "topic": "b8",
+      "question": "Why is always selecting the currently best-known action risky?",
+      "options": [
+        "Exploring removes all previously learned information",
+        "The agent must ignore all its experience",
+        "An untried action might lead to a better reward",
+        "The best-known action can never succeed"
+      ],
+      "answer": 2,
+      "explanation": "The current favorite may not be the true best option. Some exploration helps discover alternatives.",
+      "reference": "164",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q432",
+      "topic": "b8",
+      "question": "Why are thousands of real-world learning trials costly?",
+      "options": [
+        "They take time and can wear out or endanger physical systems",
+        "Physical trials supply perfect knowledge instantly",
+        "Robots can experience unlimited trials with no consequences",
+        "Real-world rewards are always obvious and immediate"
+      ],
+      "answer": 0,
+      "explanation": "Trial and error is much cheaper in a simulation. Real machines and environments impose practical limits.",
+      "reference": "165",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q433",
+      "topic": "b9",
+      "question": "Why were Atari games useful for comparing learning methods?",
+      "options": [
+        "A common software environment allowed repeatable tests",
+        "The games directly proved clinical effectiveness",
+        "All games required the same final policy",
+        "Every game had identical rules and rewards"
+      ],
+      "answer": 0,
+      "explanation": "A shared test environment makes comparison easier. Success still concerns the games tested, not every real-world task.",
+      "reference": "168–170",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q434",
+      "topic": "b9",
+      "question": "In the original Atari work, what was reused across games?",
+      "options": [
+        "The general architecture and settings, rather than a learned policy transferred between games",
+        "The same exact winning action sequence",
+        "One set of already learned weights for all games",
+        "A complete human strategy manual for each game"
+      ],
+      "answer": 0,
+      "explanation": "The method could be reused while each game was learned afresh. Reusing a recipe is different from transferring learned knowledge.",
+      "reference": "173",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q435",
+      "topic": "b9",
+      "question": "What is a ply in the checkers-search discussion?",
+      "options": [
+        "A complete game played to the end",
+        "One player's move in the look-ahead tree",
+        "One weight update in a network",
+        "An image category in ImageNet"
+      ],
+      "answer": 1,
+      "explanation": "Search can look several individual moves ahead. Counting plies makes that depth more precise.",
+      "reference": "178",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q436",
+      "topic": "b9",
+      "question": "Why does a game tree become too large to search completely?",
+      "options": [
+        "Search eliminates all branching after the first move",
+        "Each possible move leads to more possible responses",
+        "Every position has only one legal continuation",
+        "The final outcome is already known at the root"
+      ],
+      "answer": 1,
+      "explanation": "Possibilities multiply at each step. Limited search and evaluation are used because exhaustive search is too expensive.",
+      "reference": "176–180",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q437",
+      "topic": "b9",
+      "question": "What is self-play in the AlphaGo discussion?",
+      "options": [
+        "The program reads only a fixed book of human games",
+        "A human supplies every next move during training",
+        "The learning system generates games by playing against itself",
+        "Two programs play without any later learning"
+      ],
+      "answer": 2,
+      "explanation": "Self-play creates experience for training. It can improve game skill without requiring a human example for every move.",
+      "reference": "184–190",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q438",
+      "topic": "b9",
+      "question": "How do the ConvNet and Monte Carlo tree search support each other in the book’s AlphaGo explanation?",
+      "options": [
+        "The network guides promising moves, and search results help improve the network",
+        "The network supplies every final game result, so search is unnecessary",
+        "Search chooses moves without using any network guidance",
+        "The network and search run independently with no information exchanged"
+      ],
+      "answer": 0,
+      "explanation": "The network helps the search start with promising moves. Results from the search then provide better targets for training the network.",
+      "reference": "189–190",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q439",
+      "topic": "b10",
+      "question": "Why does changing a game's visual layout provide a useful test?",
+      "options": [
+        "It removes the need to compare with human learning",
+        "It guarantees the model learned abstract objects",
+        "It proves the original score was calculated incorrectly",
+        "It checks whether a learned behavior survives changes irrelevant to the main task"
+      ],
+      "answer": 3,
+      "explanation": "If a small layout change breaks performance, the learned skill may depend on narrow visual details.",
+      "reference": "196–197",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q440",
+      "topic": "b10",
+      "question": "What is an overattribution in describing AI?",
+      "options": [
+        "Using an independent test set",
+        "Comparing two different algorithms fairly",
+        "Reporting a score lower than the measured value",
+        "Crediting the system with more understanding than the evidence supports"
+      ],
+      "answer": 3,
+      "explanation": "A system may behave as if it has a concept without showing that concept transfers. Descriptions should stay close to the evidence.",
+      "reference": "196–197",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q441",
+      "topic": "b10",
+      "question": "Why does a successful method need comparison with simpler baselines?",
+      "options": [
+        "To prove simple methods always win",
+        "To remove all need to report the data",
+        "To show that high scores automatically mean general intelligence",
+        "To show whether its added complexity actually helps on the task"
+      ],
+      "answer": 3,
+      "explanation": "A complex model should earn its complexity. A simple comparison helps reveal what improvement it really provides.",
+      "reference": "194–195",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q442",
+      "topic": "b10",
+      "question": "Why is it difficult to specify the reward for a household helper?",
+      "options": [
+        "Every helpful action has one obvious universal score",
+        "A game score can be copied unchanged into every task",
+        "Useful behavior includes several goals and possible unwanted consequences",
+        "Household tasks have no physical uncertainty"
+      ],
+      "answer": 2,
+      "explanation": "Cleaning dishes is not just maximizing one easy number. Safety, correct placement and other household needs all matter.",
+      "reference": "199–200",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q443",
+      "topic": "b10",
+      "question": "Why must a dishwasher robot recognize a sponge differently from a plate?",
+      "options": [
+        "The objects require different actions in the task",
+        "Every object in the sink belongs in the dishwasher",
+        "An object label always supplies a complete action plan",
+        "They are guaranteed to have different pixel colors"
+      ],
+      "answer": 0,
+      "explanation": "Recognizing an object is useful only when connected with the right action. A sponge may not belong where dishes do.",
+      "reference": "200",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q444",
+      "topic": "b10",
+      "question": "What does the chapter's comparison of games and households warn against?",
+      "options": [
+        "Studying how learned skills might transfer",
+        "Assuming the same favorable conditions hold in both domains",
+        "Reporting useful game-playing results",
+        "Using simulations for any research purpose"
+      ],
+      "answer": 1,
+      "explanation": "Games give clear boundaries and rules. Everyday situations often do not, so transferring a method can require major changes.",
+      "reference": "199–201",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q445",
+      "topic": "b11",
+      "question": "In the restaurant story, why is praise for a burned meal understood as sarcasm?",
+      "options": [
+        "The words conflict with the situation and the man's behavior",
+        "The word great always means unhappy",
+        "Any short sentence is sarcastic",
+        "A restaurant order cannot be interpreted literally"
+      ],
+      "answer": 0,
+      "explanation": "Meaning depends on the situation. Positive words can express the opposite when the speaker is clearly dissatisfied.",
+      "reference": "203–205",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q446",
+      "topic": "b11",
+      "question": "What does the idiom 'bent out of shape' mean in the story's context?",
+      "options": [
+        "Upset or angry",
+        "Physically folded",
+        "A change in handwriting",
+        "Unable to sit in a chair"
+      ],
+      "answer": 0,
+      "explanation": "An idiom cannot always be understood word by word. Context helps select its intended meaning.",
+      "reference": "205",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q447",
+      "topic": "b11",
+      "question": "Why can one-hot encoding struggle to show similarity between two words?",
+      "options": [
+        "It stores a complete definition for each word",
+        "Every word receives the same vector",
+        "Different words have separate active positions without direct semantic closeness",
+        "It automatically places synonyms next to one another"
+      ],
+      "answer": 2,
+      "explanation": "A one-hot code identifies a word, but does not directly say that burger and hamburger are related.",
+      "reference": "215–216",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q448",
+      "topic": "b11",
+      "question": "In a semantic space, what does closeness between word vectors aim to represent?",
+      "options": [
+        "The order of publication dates",
+        "Identical spelling only",
+        "Equal numbers of letters",
+        "Related patterns of meaning or use"
+      ],
+      "answer": 3,
+      "explanation": "Nearby vectors are intended to capture useful relationships. They do not guarantee the system understands each word as a person does.",
+      "reference": "216–218",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q449",
+      "topic": "b11",
+      "question": "In the word2vec example, what training task helps learn word representations?",
+      "options": [
+        "Copying a dictionary definition exactly",
+        "Predicting the writer's full life history",
+        "Sorting all words alphabetically",
+        "Predicting words that occur in the context of an input word"
+      ],
+      "answer": 3,
+      "explanation": "Words used in similar contexts receive related learned representations. The context-prediction task produces those patterns.",
+      "reference": "219–222",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q450",
+      "topic": "b11",
+      "question": "Why is solving a word-vector analogy not the same as proving broad analogy-making ability?",
+      "options": [
+        "Vector arithmetic cannot produce a useful answer",
+        "Any correct vector answer proves general intelligence",
+        "All analogies have only one possible formal solution",
+        "It may reflect statistical relationships without flexible understanding across situations"
+      ],
+      "answer": 3,
+      "explanation": "A relationship in word data can be useful. Human analogy also involves deciding what matters in many new kinds of situations.",
+      "reference": "223–225",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q451",
+      "topic": "b12",
+      "question": "What does parallel text mean in the translation discussion?",
+      "options": [
+        "Text paired with a translation of the same content",
+        "Two unrelated documents in the same language",
+        "Repeated copies of one sentence without a translation",
+        "A list of images with no captions"
+      ],
+      "answer": 0,
+      "explanation": "The paired texts show how content is expressed in different languages. They supply examples for learning translation.",
+      "reference": "227–228",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q452",
+      "topic": "b12",
+      "question": "Why might a translation need a different number of words from the source?",
+      "options": [
+        "The decoder must delete every article",
+        "All languages use exactly the same grammar",
+        "Languages express the same meaning with different structures",
+        "A valid translation must always copy the source word count"
+      ],
+      "answer": 2,
+      "explanation": "Translation aims to preserve meaning, not word count. An encoder-decoder model can handle different sequence lengths.",
+      "reference": "229–230",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q453",
+      "topic": "b12",
+      "question": "What do attention mechanisms help a translation system do in the book's account?",
+      "options": [
+        "Remove the need for any training examples",
+        "Replace the target language with category labels",
+        "Guarantee correct interpretation of every idiom",
+        "Focus on relevant parts of the input at different output steps"
+      ],
+      "answer": 3,
+      "explanation": "Different output words may depend on different parts of the input. Attention helps the system use those parts when needed.",
+      "reference": "231",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q454",
+      "topic": "b12",
+      "question": "Why are bilingual human raters valuable in translation evaluation?",
+      "options": [
+        "They can judge any language without knowing it",
+        "They eliminate the need to sample enough translations",
+        "They can judge quality beyond exact word overlap",
+        "They always agree and never tire"
+      ],
+      "answer": 2,
+      "explanation": "A good translation may use different wording from a reference. Knowledgeable readers can assess whether it still conveys the meaning.",
+      "reference": "233–234",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q455",
+      "topic": "b12",
+      "question": "Why may news-style test sentences give an incomplete view of translation ability?",
+      "options": [
+        "They test every possible conversational context",
+        "They may contain less ambiguity or idiomatic language than everyday communication",
+        "News sentences have no grammatical structure",
+        "Their correct translation proves reliable handling of any document"
+      ],
+      "answer": 1,
+      "explanation": "Performance depends on the kinds of text tested. Clear news writing does not cover every difficulty in natural conversation.",
+      "reference": "235",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q456",
+      "topic": "b12",
+      "question": "Why were multiple human captions used for an image in the example?",
+      "options": [
+        "Five captions guarantee perfect scene understanding",
+        "Only one person could see the image at a time",
+        "Every image contains exactly five objects",
+        "Different accurate descriptions of the same image are possible"
+      ],
+      "answer": 3,
+      "explanation": "People can describe different valid aspects of one picture. Multiple examples help represent that variation.",
+      "reference": "239–240",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q457",
+      "topic": "b13",
+      "question": "Why did Watson's speed on the buzzer matter to its Jeopardy result?",
+      "options": [
+        "Winning depended only on reading speed and no knowledge",
+        "The contest rewarded responding before the other contestants",
+        "The buzzer supplied all correct answers",
+        "Buzzer speed showed full clinical reasoning"
+      ],
+      "answer": 1,
+      "explanation": "A competition measures the whole task, including timing. Its result should not be treated as a pure measure of general understanding.",
+      "reference": "248–250",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q458",
+      "topic": "b13",
+      "question": "Why are many clinical questions unlike Jeopardy clues?",
+      "options": [
+        "They always have one exact response in a fixed archive",
+        "They never depend on patient history",
+        "They can be uncertain, context-dependent and lack one short clean answer",
+        "They require only a faster buzzer"
+      ],
+      "answer": 2,
+      "explanation": "Real care often involves weighing evidence rather than retrieving a single trivia answer.",
+      "reference": "252–253",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q459",
+      "topic": "b13",
+      "question": "What did SQuAD question writers have to ensure in the original dataset?",
+      "options": [
+        "The answer appeared as a span in the supplied paragraph",
+        "Every question needed a full-page explanation",
+        "The answer was deliberately missing from the text",
+        "The answer required an external clinical guideline"
+      ],
+      "answer": 0,
+      "explanation": "This requirement makes the task answer extraction. It limits what a good score can tell us about broader comprehension.",
+      "reference": "255",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q460",
+      "topic": "b13",
+      "question": "Why can changing one word alter a Winograd schema's answer?",
+      "options": [
+        "The nearest noun is always the correct referent",
+        "The change alters which interpretation fits common sense",
+        "The first named person must always be the answer",
+        "The correct pronoun reference is fixed by its spelling alone"
+      ],
+      "answer": 1,
+      "explanation": "A small wording change can change the likely cause or situation. Resolving the pronoun requires attention to meaning.",
+      "reference": "258–260",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q461",
+      "topic": "b13",
+      "question": "When water is poured from a bottle into a cup until 'it is empty,' which container is normally meant?",
+      "options": [
+        "Both containers equally",
+        "The cup",
+        "The bottle",
+        "The sentence's speaker"
+      ],
+      "answer": 2,
+      "explanation": "The bottle loses water as the cup gains it. That everyday knowledge helps resolve the pronoun.",
+      "reference": "260–261; applied interpretation",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q462",
+      "topic": "b13",
+      "question": "Why are strong QA results on one benchmark insufficient for a general-comprehension claim?",
+      "options": [
+        "A benchmark score contains no useful information",
+        "Another task may require reasoning the benchmark did not test",
+        "All reading tasks are equivalent",
+        "Matching human performance proves every form of language understanding"
+      ],
+      "answer": 1,
+      "explanation": "A test samples particular abilities. A strong result should be described within that scope.",
+      "reference": "254–258",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q463",
+      "topic": "b14",
+      "question": "What does understanding cause and effect add beyond noticing correlation?",
+      "options": [
+        "An explanation of why one event brings about another",
+        "Proof that any frequent pattern is causal",
+        "A guarantee that all future events are certain",
+        "A rule that related events always cause each other"
+      ],
+      "answer": 0,
+      "explanation": "Two events can occur together without one causing the other. Causal understanding concerns how an event produces a change.",
+      "reference": "269–271",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q464",
+      "topic": "b14",
+      "question": "Why does predicting a pedestrian's next action involve more than object recognition?",
+      "options": [
+        "Only image brightness determines a person's intention",
+        "It requires thinking about goals, attention and likely behavior",
+        "All pedestrians move in exactly the same way",
+        "Naming the person supplies every future action"
+      ],
+      "answer": 1,
+      "explanation": "Seeing a person is one step. Predicting what they might do requires a richer model of the situation.",
+      "reference": "268–271",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q465",
+      "topic": "b14",
+      "question": "How does mental simulation differ from simply recalling one past scene?",
+      "options": [
+        "It must reproduce every past detail exactly",
+        "It cannot include possible future events",
+        "It can combine experience to imagine a new possible situation",
+        "It always supplies a certain prediction"
+      ],
+      "answer": 2,
+      "explanation": "People can use what they know to imagine what might happen next, even when the exact situation is new.",
+      "reference": "271–272",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q466",
+      "topic": "b14",
+      "question": "What everyday expression illustrates the time-as-money metaphor?",
+      "options": [
+        "The screen has many pixels",
+        "I spent too much time on it",
+        "The cup contains warm water",
+        "The dog crossed the road"
+      ],
+      "answer": 1,
+      "explanation": "The word spent usually concerns money, but is also used for time. The chapter uses such expressions to discuss abstract thought.",
+      "reference": "273",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q467",
+      "topic": "b14",
+      "question": "Why can a child recognize a cartoon cat after seeing real cats?",
+      "options": [
+        "The cartoon must have exactly the same pixels as a real cat",
+        "Only a printed category label allows recognition",
+        "The child can connect different appearances to a broader category",
+        "The child needs a separate rule for every possible drawing"
+      ],
+      "answer": 2,
+      "explanation": "Abstraction allows a category to extend beyond one exact appearance. A real animal and a drawing can share the relevant idea.",
+      "reference": "276",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q468",
+      "topic": "b14",
+      "question": "In the legal analogy, why compare a blogging platform with a wall carrying graffiti?",
+      "options": [
+        "A visual match proves the entire legal argument",
+        "The platform and wall have identical physical materials",
+        "The proposed similarity concerns responsibility for other people's writing",
+        "Every property of a wall must transfer to a website"
+      ],
+      "answer": 2,
+      "explanation": "The analogy maps a relevant relationship, not every surface detail. Whether such a legal analogy succeeds still depends on the case.",
+      "reference": "277–278",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q469",
+      "topic": "b15",
+      "question": "How can Cyc infer a new assertion from existing ones?",
+      "options": [
+        "Only by receiving a reward after physical movement",
+        "Only by counting image pixels",
+        "By applying logical relations to stored knowledge",
+        "Only by generating random text"
+      ],
+      "answer": 2,
+      "explanation": "If the stored rules and facts support a conclusion, an inference procedure can derive it. This is different from learning only numerical associations.",
+      "reference": "282–283",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q470",
+      "topic": "b15",
+      "question": "Why is twelve-example learning important in the Bongard discussion?",
+      "options": [
+        "It guarantees every neural network can learn the rule perfectly",
+        "It shows that training data quality is irrelevant",
+        "It highlights how people can identify an abstract distinction from few cases",
+        "It removes the need to decide which attributes matter"
+      ],
+      "answer": 2,
+      "explanation": "People often infer the relevant relationship quickly. The challenge is to give machines similarly flexible learning, not just more examples.",
+      "reference": "287–291",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q471",
+      "topic": "b15",
+      "question": "If azbzczd becomes abcd, what analogous result is described for pxqxrxsxt?",
+      "options": [
+        "pqrsxt",
+        "abcd",
+        "pqrst",
+        "pxqxrxsxt"
+      ],
+      "answer": 2,
+      "explanation": "The repeated z and x characters play the same role: extra letters to remove. Recognizing that role reveals the remaining sequence.",
+      "reference": "296",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q472",
+      "topic": "b15",
+      "question": "If abc becomes abd, what answer does the book discuss for ace using a double-successor pattern?",
+      "options": [
+        "bdf",
+        "acf",
+        "acg",
+        "abd"
+      ],
+      "answer": 2,
+      "explanation": "In ace the letters advance by two. Extending that pattern changes the final e to g rather than simply to the next alphabet letter.",
+      "reference": "296",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q473",
+      "topic": "b15",
+      "question": "What would self-monitoring help a problem-solving program notice?",
+      "options": [
+        "That its training data contain no possible bias",
+        "That it keeps repeating an unsuccessful approach",
+        "That all tasks use the same representation",
+        "That every generated answer is automatically valid"
+      ],
+      "answer": 1,
+      "explanation": "A solver can waste effort repeating a failed strategy. Monitoring its own actions could help it change approach.",
+      "reference": "296–297",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q474",
+      "topic": "b15",
+      "question": "What makes the photograph of a foot on a weighing scale difficult to understand fully?",
+      "options": [
+        "It contains no relationships between people",
+        "It can be explained from the photograph's file name alone",
+        "It requires only naming the scale",
+        "It requires physical and social knowledge to recognize the trick and the amusement"
+      ],
+      "answer": 3,
+      "explanation": "A foot adds weight, the person may not notice, and observers understand the joke. Those connected inferences go beyond listing objects.",
+      "reference": "299–302",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q475",
+      "topic": "b16",
+      "question": "What responsibility does the book's level 3 summary retain for the human driver?",
+      "options": [
+        "At level 3 the vehicle works in every possible condition",
+        "At level 3 no human can ever take control",
+        "At level 3 the vehicle provides no steering assistance",
+        "Remain attentive and ready to take control when requested"
+      ],
+      "answer": 3,
+      "explanation": "The supplied book says the human must remain attentive and ready to take over. This question follows its historical summary, rather than giving current driving guidance.",
+      "reference": "305",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q476",
+      "topic": "b16",
+      "question": "What distinguishes level 4 from level 5 in the book's summary?",
+      "options": [
+        "Level 4 has no autonomous operation at all",
+        "Level 5 controls speed only",
+        "The levels differ only in the number of passengers",
+        "Level 4 is limited to certain conditions; level 5 covers all conditions in the definition"
+      ],
+      "answer": 3,
+      "explanation": "The operating limits are crucial. A system working within a defined domain should not be described as working everywhere.",
+      "reference": "305",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q477",
+      "topic": "b16",
+      "question": "Why might predictable human behavior still be hard for an autonomous car to rely on?",
+      "options": [
+        "A high-definition map includes every future human action",
+        "People can act unexpectedly, break rules or deliberately test the vehicle",
+        "Geofencing removes all interactions with people",
+        "Every pedestrian always follows the same rules"
+      ],
+      "answer": 1,
+      "explanation": "A mapped area still contains people. Maps do not guarantee how those people will behave.",
+      "reference": "306–309",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q478",
+      "topic": "b16",
+      "question": "How did human judgment guide the genetic-art example?",
+      "options": [
+        "Only numerical image size determined which work was best",
+        "People selected preferred outputs from generated variations",
+        "The program proved its own artistic value without human judgment",
+        "Every random output was accepted as equally successful"
+      ],
+      "answer": 1,
+      "explanation": "Generating options and judging their value are different activities. Human selection shaped the artistic results discussed.",
+      "reference": "311",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q479",
+      "topic": "b16",
+      "question": "Why does the author question the idea of an all-knowing, instantly learning superintelligence?",
+      "options": [
+        "A chess-playing program cannot use numerical memory",
+        "All intelligent programs must have the same speed as a brain",
+        "Human intelligence may be closely tied to embodied experience and cognitive limits",
+        "The book proves that no machine can perform arithmetic"
+      ],
+      "answer": 2,
+      "explanation": "The author asks whether features treated as human limitations also help make broad intelligence possible. This is an argument, not a settled proof.",
+      "reference": "315–317",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q480",
+      "topic": "b16",
+      "question": "What does the final discussion say about the original Dartmouth research questions?",
+      "options": [
+        "Every listed question has been completely solved",
+        "The original proposal concerned no topic relevant to AI",
+        "Only faster hardware remains to be developed",
+        "Many remain important and unresolved despite major progress"
+      ],
+      "answer": 3,
+      "explanation": "Progress can be substantial while deep questions remain open. The book ends by returning to learning, reasoning, language and creativity.",
+      "reference": "319–320",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q481",
+      "topic": "d1",
+      "question": "What is the main documentation benefit proposed in the new lecture?",
+      "options": [
+        "A final note that needs no source checking",
+        "An automatic replacement for clinical judgment",
+        "A guarantee that every session detail is correct",
+        "A faster structured first draft for clinician review"
+      ],
+      "answer": 3,
+      "explanation": "The tool can help organize a draft quickly. The clinician still checks whether the draft matches the session.",
+      "reference": "slides 1–5",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q482",
+      "topic": "d1",
+      "question": "Why can a fluent AI-generated note be misleading?",
+      "options": [
+        "Professional wording can hide factual and numerical errors",
+        "Only poorly written notes need verification",
+        "A polished note cannot contain missing information",
+        "Fluency proves the system observed the session"
+      ],
+      "answer": 0,
+      "explanation": "Good writing and accurate content are different things. Check the evidence even when a note sounds professional.",
+      "reference": "slides 2, 5",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q483",
+      "topic": "d1",
+      "question": "Which task fits the lecture's account of an LLM's useful role?",
+      "options": [
+        "Seeing an unmentioned gesture from text alone",
+        "Accepting responsibility for the signed note",
+        "Extracting supplied details into a requested table",
+        "Knowing an unrecorded caregiver report"
+      ],
+      "answer": 2,
+      "explanation": "An LLM can reorganize information it receives. It cannot recover an event that was never included in its input.",
+      "reference": "slides 4–5",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q484",
+      "topic": "d1",
+      "question": "Which documentation burden does the lecture identify alongside time and consistency?",
+      "options": [
+        "Removing the need for patient history",
+        "Tabulating trial-by-trial data",
+        "Selecting a diagnosis from every recording",
+        "Making every note the same length"
+      ],
+      "answer": 1,
+      "explanation": "Many individual responses take time to count and organize. AI may help with a first pass, but the counts need checking.",
+      "reference": "slides 2–3",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q485",
+      "topic": "d1",
+      "question": "In the lecture's six-step workflow, which two steps explicitly use AI?",
+      "options": [
+        "Choosing the clinical goal and approving the plan",
+        "Reviewing the evidence and accepting professional responsibility",
+        "Transcribing speech and drafting the SOAP note",
+        "Obtaining consent and signing the note"
+      ],
+      "answer": 2,
+      "explanation": "Speech-to-text produces a raw transcript, and the LLM produces a draft. The surrounding preparation and review remain clinician-owned.",
+      "reference": "slide 9",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q486",
+      "topic": "d1",
+      "question": "Which step follows raw transcription and precedes LLM drafting?",
+      "options": [
+        "Prepare the transcript by de-identifying and labeling it",
+        "Sign and file the final note",
+        "Remove all prompt-level information",
+        "Accept the first generated diagnosis"
+      ],
+      "answer": 0,
+      "explanation": "A raw transcript may lack important context or contain identifiers. Prepare it before asking the LLM to draft the note.",
+      "reference": "slides 9–10",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q487",
+      "topic": "d1",
+      "question": "Why should speaker labels appear on each transcript turn?",
+      "options": [
+        "To replace the need to record non-verbal actions",
+        "To make every statement count as a caregiver report",
+        "To turn a transcript into a diagnosis",
+        "To distinguish who said each statement"
+      ],
+      "answer": 3,
+      "explanation": "Labels such as therapist, child and parent help prevent statements being attributed to the wrong person.",
+      "reference": "slide 10",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q488",
+      "topic": "d1",
+      "question": "What do T, C and P mean in the lecture's transcript speaker labels?",
+      "options": [
+        "Therapist, child and parent",
+        "Training, classification and prediction",
+        "Target, correct and prompted",
+        "Trial, clinician and plan"
+      ],
+      "answer": 0,
+      "explanation": "These labels identify speakers in this transcript. Their meaning depends on context, so do not confuse speaker P with a prompt code.",
+      "reference": "slide 10",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q489",
+      "topic": "d1",
+      "question": "How should Urdu–English code-switching be handled when preparing the transcript?",
+      "options": [
+        "Preserve the utterance as spoken and add a meaning gloss where needed",
+        "Change the child's words into a more advanced sentence",
+        "Translate everything silently and delete the original",
+        "Mark every Urdu word as an error"
+      ],
+      "answer": 0,
+      "explanation": "Keep the actual language sample available for checking. A gloss explains meaning without replacing what was said.",
+      "reference": "slide 10",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q490",
+      "topic": "d1",
+      "question": "What does 'type the invisible' mean in this lecture?",
+      "options": [
+        "Remove all gestures from the clinical record",
+        "Ask the LLM to infer everything missing from the audio",
+        "Write non-verbal actions and prompts in brackets",
+        "Guess the child's unspoken intentions"
+      ],
+      "answer": 2,
+      "explanation": "A text model cannot see a gesture that is absent from the transcript. Add relevant actions explicitly, such as an AAC button press.",
+      "reference": "slides 5, 10",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q491",
+      "topic": "d1",
+      "question": "Which transcript entry best records a non-verbal support event?",
+      "options": [
+        "The model should decide whether a gesture happened",
+        "The child probably understood the task",
+        "No prompt was recorded, so no prompt occurred",
+        "[Therapist points to the AAC WANT button]"
+      ],
+      "answer": 3,
+      "explanation": "Describe the observed action directly. This lets a later reviewer distinguish independent performance from prompted performance.",
+      "reference": "slides 10, 13",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q492",
+      "topic": "d1",
+      "question": "Why should trials be numbered before asking AI to code them?",
+      "options": [
+        "Numbering guarantees that all codes are correct",
+        "Each numbered trial automatically becomes independent",
+        "Each response and code can be matched and checked",
+        "Numbering makes response evidence unnecessary"
+      ],
+      "answer": 2,
+      "explanation": "Trial numbers give the reviewer a clear reference. They also help reveal missing or invented trials.",
+      "reference": "slides 10, 29–31",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q493",
+      "topic": "d1",
+      "question": "In the fictional Child A case, what is the target skill?",
+      "options": [
+        "Understanding a paragraph read aloud",
+        "Two-word requests using want plus an object",
+        "Independent three-word descriptions",
+        "Accurate production of one speech sound"
+      ],
+      "answer": 1,
+      "explanation": "The goal is a two-word request. A response must be judged against that goal, rather than against word production in general.",
+      "reference": "slide 11",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q494",
+      "topic": "d1",
+      "question": "What does age 5;2 mean in the fictional case?",
+      "options": [
+        "Two years and five months",
+        "Five years and two weeks",
+        "Five and a half years exactly",
+        "Five years and two months"
+      ],
+      "answer": 3,
+      "explanation": "The notation separates years and months. Accurate age information helps keep the documentation tied to the right case.",
+      "reference": "slide 11",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q495",
+      "topic": "d1",
+      "question": "Why must the six-trial excerpt not be presented as the entire twenty-trial session?",
+      "options": [
+        "All twenty trials necessarily had the same outcomes",
+        "The six trials contain no measurable data",
+        "A sample percentage automatically describes every planned trial",
+        "The remaining fourteen trials are not supplied in the excerpt"
+      ],
+      "answer": 3,
+      "explanation": "The lecture supplies six of twenty planned trials. Report what the excerpt actually supports instead of inventing the other results.",
+      "reference": "slides 11–13, 27",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q496",
+      "topic": "d1",
+      "question": "Which letters form the documentation-prompt mnemonic in the new lecture?",
+      "options": [
+        "R-A-S-P-T",
+        "I-P-M-G-V",
+        "S-O-A-P-C",
+        "R-C-T-F-C"
+      ],
+      "answer": 3,
+      "explanation": "The mnemonic stands for Role, Context, Task, Format and Constraints. It helps organize a clear drafting request.",
+      "reference": "slide 14",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q497",
+      "topic": "d1",
+      "question": "What role is specified for the LLM in the new documentation prompt?",
+      "options": [
+        "Substitute for the signing professional",
+        "Independent diagnosing clinician",
+        "Unsupervised care-plan decision-maker",
+        "Documentation assistant for an SLP"
+      ],
+      "answer": 3,
+      "explanation": "The role narrows the request to drafting support. It does not give the model professional responsibility.",
+      "reference": "slides 14–15",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q498",
+      "topic": "d1",
+      "question": "Which details belong in Context for the lecture's documentation prompt?",
+      "options": [
+        "Only the final note headings",
+        "Age, goal, session type, languages and AAC availability",
+        "Only the instruction to avoid invention",
+        "Only the number of words in the answer"
+      ],
+      "answer": 1,
+      "explanation": "Context tells the model the relevant background. The task and constraints then explain what it should do with that information.",
+      "reference": "slides 14–15",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q499",
+      "topic": "d1",
+      "question": "What source restriction does the lecture's prompt impose?",
+      "options": [
+        "Use only the transcript and the coded data table",
+        "Add common caregiver concerns from memory",
+        "Use a likely diagnosis to complete the note",
+        "Fill gaps using similar patients' histories"
+      ],
+      "answer": 0,
+      "explanation": "Limiting the source reduces unsupported additions. The clinician still checks whether the model followed the instruction.",
+      "reference": "slides 15–16",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q500",
+      "topic": "d1",
+      "question": "Why does the prompt ask the LLM to copy numbers from a verified table?",
+      "options": [
+        "To keep note writing separate from checked coding and arithmetic",
+        "To prevent the clinician from inspecting the counts",
+        "To make trial-level data unnecessary",
+        "To treat the LLM's first calculation as final"
+      ],
+      "answer": 0,
+      "explanation": "The clinician verifies the counts first. The drafting step then uses those numbers instead of asking the LLM to recalculate them.",
+      "reference": "slides 15–16",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q501",
+      "topic": "d1",
+      "question": "What should the prompt require when a detail is absent?",
+      "options": [
+        "Write [NOT STATED]",
+        "Treat the missing detail as a normal finding",
+        "Supply the most typical detail",
+        "Copy a detail from another session"
+      ],
+      "answer": 0,
+      "explanation": "A visible missing-data marker is more honest than a plausible guess. It tells the clinician what needs attention.",
+      "reference": "slides 14, 16",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q502",
+      "topic": "d1",
+      "question": "How should an ambiguous transcript detail be handled in the constrained prompt?",
+      "options": [
+        "Convert it into a definite clinical finding",
+        "Choose the most reassuring interpretation",
+        "Flag it for clinician review",
+        "Delete all evidence that the ambiguity existed"
+      ],
+      "answer": 2,
+      "explanation": "An uncertain detail should stay visibly uncertain. The clinician decides how to resolve it.",
+      "reference": "slide 16",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q503",
+      "topic": "d1",
+      "question": "Which format does the documentation prompt request?",
+      "options": [
+        "S, O, A and P headings with short bullets",
+        "One uninterrupted narrative without headings",
+        "Only a diagnostic label and a confidence score",
+        "A table containing no source information"
+      ],
+      "answer": 0,
+      "explanation": "The specified headings make the note easier to review. A clear structure does not by itself guarantee accurate content.",
+      "reference": "slides 14–15",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q504",
+      "topic": "d1",
+      "question": "What is the specific risk in the Subjective section shown in the new lecture?",
+      "options": [
+        "Mixing hidden-layer activations with output labels",
+        "Recording an actual client statement with its speaker",
+        "Using a prompt level in a trial table",
+        "Inventing a caregiver report that was never recorded"
+      ],
+      "answer": 3,
+      "explanation": "Subjective statements still need a source. Do not write that a parent said something when the transcript contains no such report.",
+      "reference": "slides 7–8, 17",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q505",
+      "topic": "d1",
+      "question": "What is the specific Objective-section risk highlighted by the lecture?",
+      "options": [
+        "Including measurable trial results",
+        "Giving the number of observed trials",
+        "Showing both correct and independent performance",
+        "Wrong counts and missing prompt information"
+      ],
+      "answer": 3,
+      "explanation": "A note can overstate skill when it changes the counts or hides the support the child needed.",
+      "reference": "slides 7–8",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q506",
+      "topic": "d1",
+      "question": "Why do Assessment and Plan need the clinician's authorship or approval?",
+      "options": [
+        "They can be approved by fluent wording alone",
+        "They contain clinical interpretation and decisions about next steps",
+        "They are only direct quotations from the transcript",
+        "They never require evidence"
+      ],
+      "answer": 1,
+      "explanation": "The clinician decides what the results mean and what should happen next. A drafting tool does not take over that judgment.",
+      "reference": "slides 7–8",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q507",
+      "topic": "d1",
+      "question": "What should caregiver consent address in the lecture's workflow?",
+      "options": [
+        "Only the final note's spelling",
+        "Recording and the use of AI to process the material",
+        "Only whether a transcript has speaker labels",
+        "Only permission to create an anonymous filename"
+      ],
+      "answer": 1,
+      "explanation": "Caregivers should understand both recording and processing. Follow the institution's consent procedure.",
+      "reference": "slide 19",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q508",
+      "topic": "d1",
+      "question": "Which extra tool-policy detail does the new lecture ask clinicians to check?",
+      "options": [
+        "Data-retention and training settings",
+        "Only whether the interface has dark mode",
+        "Only how long the vendor's name is",
+        "Only the number of formatting templates"
+      ],
+      "answer": 0,
+      "explanation": "Know what happens to the submitted material and how long it is retained. Use an institution-approved tool.",
+      "reference": "slide 19 and speaker notes",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q509",
+      "topic": "d1",
+      "question": "Why does the lecture suggest keeping versions of useful prompts?",
+      "options": [
+        "So all later patients receive an identical plan",
+        "So old prompts can replace source transcripts",
+        "So changes to drafting instructions can be tracked and reviewed",
+        "So the newest prompt can bypass clinical review"
+      ],
+      "answer": 2,
+      "explanation": "A version record helps show which instructions produced a draft. It supports review and improvement of the workflow.",
+      "reference": "slides 15–16 and speaker notes",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q510",
+      "topic": "d1",
+      "question": "When should the final note be signed and filed in the six-step workflow?",
+      "options": [
+        "As soon as all four headings are present",
+        "After the clinician reviews, corrects and completes it",
+        "Immediately after the LLM returns its first draft",
+        "Before trial data are checked"
+      ],
+      "answer": 1,
+      "explanation": "Signing comes after review. The professional accepting the note is responsible for its contents.",
+      "reference": "slides 9, 19",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q511",
+      "topic": "d2",
+      "question": "Why does a supported-correct percentage alone give an incomplete picture of skill?",
+      "options": [
+        "It removes the need to record no-response trials",
+        "It proves the child has mastered the skill independently",
+        "It always undercounts independent responses",
+        "It can hide how much prompting was needed"
+      ],
+      "answer": 3,
+      "explanation": "A child can be correct with considerable help. Track correctness and independence separately to see the difference.",
+      "reference": "slides 21–22",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q512",
+      "topic": "d2",
+      "question": "According to the lecture's planning matrix, what should follow correct independent performance?",
+      "options": [
+        "Plan generalisation to other situations",
+        "Increase physical prompting on every trial",
+        "Classify the successful response as an error",
+        "Automatically increase every target to three words"
+      ],
+      "answer": 0,
+      "explanation": "The child can perform without extra help on that trial. The lecture then points toward checking use beyond that exact situation.",
+      "reference": "slides 21–22",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q513",
+      "topic": "d2",
+      "question": "What does the planning matrix recommend for correct but prompted performance?",
+      "options": [
+        "Immediately declare independent mastery",
+        "Delete the successful trial",
+        "Stop tracking the type of support",
+        "Systematically fade prompts"
+      ],
+      "answer": 3,
+      "explanation": "The response is successful but still depends on help. Fading prompts aims to make it more independent.",
+      "reference": "slides 21–22",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q514",
+      "topic": "d2",
+      "question": "What does the planning matrix recommend for an incorrect response without a prompt?",
+      "options": [
+        "Record independent mastery",
+        "Analyze the error pattern",
+        "Assume the transcript is missing a correct response",
+        "Add the response to the prompted-correct total"
+      ],
+      "answer": 1,
+      "explanation": "An error can reveal what is difficult. Examine its pattern instead of treating any independent attempt as a success.",
+      "reference": "slide 22",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q515",
+      "topic": "d2",
+      "question": "What does the matrix suggest when a response remains incorrect even with prompting?",
+      "options": [
+        "Count it as correct because help was provided",
+        "Increase the independent-accuracy numerator",
+        "Remove it from all trial totals",
+        "Simplify the task or change the prompt"
+      ],
+      "answer": 3,
+      "explanation": "Support did not produce the target response. The lecture suggests adjusting the demand or the help offered.",
+      "reference": "slide 22",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q516",
+      "topic": "d2",
+      "question": "How should no response be treated in the lecture's data system?",
+      "options": [
+        "Automatically merged with prompted-correct responses",
+        "Recorded separately as NR",
+        "Assumed to be an independent success",
+        "Omitted from the total without explanation"
+      ],
+      "answer": 1,
+      "explanation": "NR makes a distinct outcome visible. It remains part of the total trial count used in the worked calculations.",
+      "reference": "slides 21, 23, 27",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q517",
+      "topic": "d2",
+      "question": "What must clinicians specify before human or AI coding begins?",
+      "options": [
+        "Only the number of paragraphs in the note",
+        "Only the model's preferred diagnosis",
+        "The coding rules, wait time and scoring approach",
+        "Only a desired final percentage"
+      ],
+      "answer": 2,
+      "explanation": "Decide the rules first so both coders judge the same behavior in the same way.",
+      "reference": "slides 23–24",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q518",
+      "topic": "d2",
+      "question": "In this lecture's coding key, what qualifies for I+?",
+      "options": [
+        "Any final correct response after a model",
+        "A correct response on the first opportunity without a prompt",
+        "No response within the wait time",
+        "Any response containing one relevant word"
+      ],
+      "answer": 1,
+      "explanation": "I+ means the target was correct without additional help on that opportunity. A later success after prompting belongs elsewhere.",
+      "reference": "slides 23–24",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q519",
+      "topic": "d2",
+      "question": "What additional information should accompany a P+ code?",
+      "options": [
+        "A replacement for the original response",
+        "The level of prompt that produced the correct response",
+        "An invented independent score",
+        "The child's presumed diagnosis"
+      ],
+      "answer": 1,
+      "explanation": "P+ tells you help was needed. The prompt level tells you what kind of help led to success.",
+      "reference": "slides 23, 25",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q520",
+      "topic": "d2",
+      "question": "Which prompt code identifies a verbal cue in the new lecture?",
+      "options": [
+        "M",
+        "G",
+        "V",
+        "P"
+      ],
+      "answer": 2,
+      "explanation": "V stands for a verbal cue, such as beginning the request with I want. It is different from giving a full model.",
+      "reference": "slide 25",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q521",
+      "topic": "d2",
+      "question": "Which prompt code identifies a complete model such as 'Want car'?",
+      "options": [
+        "V",
+        "G",
+        "M",
+        "P"
+      ],
+      "answer": 2,
+      "explanation": "M marks a modeled response for the child to repeat. The record should show that the successful response followed this support.",
+      "reference": "slide 25",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q522",
+      "topic": "d2",
+      "question": "Which prompt code applies to pointing at an AAC button?",
+      "options": [
+        "V",
+        "G",
+        "P",
+        "M"
+      ],
+      "answer": 1,
+      "explanation": "G represents a gestural or visual prompt. The AAC press can be correct while still depending on that cue.",
+      "reference": "slide 25",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q523",
+      "topic": "d2",
+      "question": "Which prompt code represents physical guidance in this lecture?",
+      "options": [
+        "G",
+        "M",
+        "P",
+        "V"
+      ],
+      "answer": 2,
+      "explanation": "P identifies physical support, such as hand-over-hand guidance in the lecture's example. Record the support actually used.",
+      "reference": "slide 25",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q524",
+      "topic": "d2",
+      "question": "In the fictional case, 'Want bubble' follows the ordinary task question without an extra cue. What code does the lecture assign?",
+      "options": [
+        "P+ with M",
+        "NR",
+        "Incorrect",
+        "I+"
+      ],
+      "answer": 3,
+      "explanation": "The target two-word request is produced without an additional prompt. The lecture codes this trial as independently correct.",
+      "reference": "slides 12, 26",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q525",
+      "topic": "d2",
+      "question": "A child first says 'Car' and then says 'Want car' after the therapist models it. How is this trial coded in the lecture?",
+      "options": [
+        "P+ with M",
+        "NR",
+        "I+",
+        "P+ with G"
+      ],
+      "answer": 0,
+      "explanation": "The initial one-word response did not meet the target. The two-word success followed a model, so it is prompted-correct.",
+      "reference": "slides 12, 26",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q526",
+      "topic": "d2",
+      "question": "A two-word request is the target, but the child says 'No.' Which code is assigned in the worked case?",
+      "options": [
+        "Incorrect",
+        "I+",
+        "NR",
+        "P+ with V"
+      ],
+      "answer": 0,
+      "explanation": "The child responded, so this is not NR. The response does not meet the specified two-word requesting target.",
+      "reference": "slides 12, 26",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q527",
+      "topic": "d2",
+      "question": "In the case, 'Want ball' is produced without an extra cue. Which code does the lecture give?",
+      "options": [
+        "NR",
+        "I+",
+        "P+ with G",
+        "P+ with M"
+      ],
+      "answer": 1,
+      "explanation": "The response meets the goal without an additional prompt. It is the second independent success in the excerpt.",
+      "reference": "slides 13, 26",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q528",
+      "topic": "d2",
+      "question": "The therapist points to WANT and the child presses WANT plus JUICE on AAC. What is the case's coding?",
+      "options": [
+        "P+ with G",
+        "Incorrect because only speech can meet the case target",
+        "I+ simply because AAC was used",
+        "NR because there was no spoken answer"
+      ],
+      "answer": 0,
+      "explanation": "The lecture accepts this AAC request as correct. It remains prompted because the therapist provided a gestural cue.",
+      "reference": "slides 13, 26",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q529",
+      "topic": "d2",
+      "question": "A child gives no response within the case's five-second wait. What is the appropriate code?",
+      "options": [
+        "NR",
+        "P+ with G",
+        "P+ with M",
+        "I+"
+      ],
+      "answer": 0,
+      "explanation": "NR records the absence of a response within the chosen wait period. Do not invent an answer to complete the trial.",
+      "reference": "slides 13, 23–26",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q530",
+      "topic": "d2",
+      "question": "What is the tally for the lecture's six-trial case?",
+      "options": [
+        "1 I+, 3 P+, 0 incorrect and 2 NR",
+        "2 I+, 1 P+, 2 incorrect and 1 NR",
+        "4 I+, 0 P+, 1 incorrect and 1 NR",
+        "2 I+, 2 P+, 1 incorrect and 1 NR"
+      ],
+      "answer": 3,
+      "explanation": "Two successes were independent and two needed prompts. The other outcomes were one incorrect response and one no response.",
+      "reference": "slides 26–27",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q531",
+      "topic": "d2",
+      "question": "For 2 I+, 2 P+, 1 incorrect and 1 NR, what is total correctness with any support?",
+      "options": [
+        "4/6, about 67%",
+        "4/4, 100%",
+        "2/6, about 33%",
+        "2/4, 50%"
+      ],
+      "answer": 0,
+      "explanation": "Add independent and prompted successes, then divide by all six trials. The result describes success with any support.",
+      "reference": "slide 27",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q532",
+      "topic": "d2",
+      "question": "For the six-trial case, why should 67% not be labeled independent performance?",
+      "options": [
+        "All four correct responses were unprompted",
+        "NR must be counted as independent success",
+        "Two of the four correct responses needed prompts",
+        "Percentages cannot describe independent responses"
+      ],
+      "answer": 2,
+      "explanation": "Only two of the six responses were independently correct. Calling all four independent hides the extra help.",
+      "reference": "slides 17, 27, 36",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q533",
+      "topic": "d2",
+      "question": "Why should a result include n as well as a percentage?",
+      "options": [
+        "It identifies the number of neural layers",
+        "It replaces the need to show the numerator",
+        "It guarantees that every trial was independent",
+        "It shows how many trials the percentage is based on"
+      ],
+      "answer": 3,
+      "explanation": "The same percentage can come from very different amounts of evidence. Giving the trial count makes the result easier to interpret.",
+      "reference": "slide 27",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q534",
+      "topic": "d2",
+      "question": "In the three-session example, supported correctness rises 50%, 65%, 70% while independence rises 20%, 30%, 40%. What does this show?",
+      "options": [
+        "Both improve, but some success still depends on prompts",
+        "Seventy percent of responses are independently correct in session 3",
+        "The two measures are interchangeable",
+        "Prompt dependence has disappeared"
+      ],
+      "answer": 0,
+      "explanation": "Improvement in total correctness does not mean every success is independent. Both lines are needed to see progress clearly.",
+      "reference": "slide 28",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q535",
+      "topic": "d2",
+      "question": "In the illustrative third session, 14 of 20 responses are correct and 8 are independent. How many correct responses were prompted?",
+      "options": [
+        "6",
+        "14",
+        "8",
+        "12"
+      ],
+      "answer": 0,
+      "explanation": "Subtract the eight independent successes from fourteen total successes. Six correct responses still needed support.",
+      "reference": "slide 28 and speaker notes",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q536",
+      "topic": "d2",
+      "question": "What trial-level evidence should an AI coding table provide?",
+      "options": [
+        "Only an inferred description of motivation",
+        "Only an overall confidence statement",
+        "The exact transcript line supporting each code",
+        "Only the final percentage"
+      ],
+      "answer": 2,
+      "explanation": "A source line lets the clinician check a code quickly. It makes the table easier to audit than an unsupported summary.",
+      "reference": "slides 29–30",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q537",
+      "topic": "d2",
+      "question": "Why does the lecture's AI-coding request prohibit percentages?",
+      "options": [
+        "Percentages are never useful in documentation",
+        "Codes are checked first and arithmetic is done separately",
+        "A model's counts cannot be inspected by a human",
+        "Every clinical percentage should be estimated from memory"
+      ],
+      "answer": 1,
+      "explanation": "Separate the coding task from calculation. Use the verified counts for arithmetic in a spreadsheet or by hand.",
+      "reference": "slides 27, 29–30",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q538",
+      "topic": "d2",
+      "question": "What should an AI coder write when it cannot confidently classify a trial?",
+      "options": [
+        "UNSURE",
+        "I+ by default",
+        "P+ by default",
+        "A likely diagnosis"
+      ],
+      "answer": 0,
+      "explanation": "An uncertainty marker makes the difficulty visible. The clinician can then check the original evidence and decide.",
+      "reference": "slides 29–30",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q539",
+      "topic": "d2",
+      "question": "What is the danger of scoring only the final response after assistance?",
+      "options": [
+        "It can hide an unsuccessful first attempt and overstate independence",
+        "It always lowers supported correctness to zero",
+        "It guarantees fair comparison with first-response coding",
+        "It makes prompt-level recording unnecessary"
+      ],
+      "answer": 0,
+      "explanation": "A correct answer at the end may have required help. Keep the first response and any later prompted success visible.",
+      "reference": "slides 24, 29–31",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q540",
+      "topic": "d2",
+      "question": "What check helps detect invented or skipped trials in a complete coded dataset?",
+      "options": [
+        "Reconcile the number of coded trials with the source and expected trial count",
+        "Accept a total because its percentage is round",
+        "Count only rows labeled I+",
+        "Remove NR outcomes until the counts match"
+      ],
+      "answer": 0,
+      "explanation": "Every coded row should match a real recorded trial. For a supplied excerpt, check its actual size rather than inventing missing session trials.",
+      "reference": "slide 31; applied to the excerpt",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q541",
+      "topic": "d2",
+      "question": "In the five-trial activity, the child says 'Truck, truck, truck' when a two-word request is required. What is the answer-key code?",
+      "options": [
+        "Incorrect",
+        "P+ with M",
+        "I+ because three words were spoken",
+        "NR"
+      ],
+      "answer": 0,
+      "explanation": "Repeating one word does not produce the required want-plus-object request. Judge the target, not just the number of spoken tokens.",
+      "reference": "slides 32–33 and speaker notes",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q542",
+      "topic": "d2",
+      "question": "What tally does the five-trial activity's answer key give?",
+      "options": [
+        "3 I+, 0 P+, 1 incorrect and 1 NR",
+        "1 I+, 1 P+, 2 incorrect and 1 NR",
+        "1 I+, 2 P+, 1 incorrect and 1 NR",
+        "2 I+, 2 P+, 1 incorrect and 0 NR"
+      ],
+      "answer": 2,
+      "explanation": "The activity includes one independent success, a modeled success, an error, no response and a gesturally prompted AAC success.",
+      "reference": "slides 32–33 and speaker notes",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q543",
+      "topic": "d2",
+      "question": "For 1 I+, 2 P+, 1 incorrect and 1 NR, what is correctness with any support?",
+      "options": [
+        "2/3, about 67%",
+        "2/5, 40%",
+        "1/5, 20%",
+        "3/5, 60%"
+      ],
+      "answer": 3,
+      "explanation": "There are three correct responses altogether. Divide three by all five trials to obtain 60%.",
+      "reference": "slides 32–33 and speaker notes",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q544",
+      "topic": "d2",
+      "question": "For 1 I+, 2 P+, 1 incorrect and 1 NR, what is independent accuracy?",
+      "options": [
+        "3/5, 60%",
+        "1/5, 20%",
+        "2/3, about 67%",
+        "1/3, about 33%"
+      ],
+      "answer": 1,
+      "explanation": "Only the one I+ response was independent. Divide one by the five total trials.",
+      "reference": "slides 32–33 and speaker notes",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q545",
+      "topic": "d2",
+      "question": "For 1 I+, 2 P+, 1 incorrect and 1 NR, what is prompt dependence among correct responses?",
+      "options": [
+        "2/3, about 67%",
+        "3/5, 60%",
+        "1/5, 20%",
+        "2/5, 40%"
+      ],
+      "answer": 0,
+      "explanation": "Two of the three successful responses needed a prompt. The denominator is all correct responses, rather than all trials.",
+      "reference": "slides 32–33 and speaker notes",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q546",
+      "topic": "d3",
+      "question": "An AI note invents a parent report absent from the transcript. Which error type best describes this?",
+      "options": [
+        "Correct attribution",
+        "Supported interpretation",
+        "Fabrication",
+        "Omission"
+      ],
+      "answer": 2,
+      "explanation": "The note adds information with no source. Remove it rather than treating a plausible report as something that happened.",
+      "reference": "slides 35–36",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q547",
+      "topic": "d3",
+      "question": "An AI note labels four supported successes as four independent successes. Which error type is central?",
+      "options": [
+        "Accurate summarization",
+        "Data distortion",
+        "Privacy protection",
+        "Correct speaker attribution"
+      ],
+      "answer": 1,
+      "explanation": "The underlying category has changed. The count of successes may be four, but the count of independent successes is only two in the case.",
+      "reference": "slides 35–36",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q548",
+      "topic": "d3",
+      "question": "An AI note mentions an AAC response but leaves out the gestural prompt. What error type is highlighted?",
+      "options": [
+        "Appropriate de-identification",
+        "Correct diagnosis",
+        "Omission",
+        "A fully complete Objective section"
+      ],
+      "answer": 2,
+      "explanation": "The missing prompt changes how the reader interprets the skill. Add the observed support instead of presenting the response without it.",
+      "reference": "slides 35, 37",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q549",
+      "topic": "d3",
+      "question": "The AI labels requested repetition of a clinician's model as delayed echolalia. What error is highlighted by the lecture?",
+      "options": [
+        "A valid independent response code",
+        "An acceptable plan change",
+        "Terminology error",
+        "A correct source quotation"
+      ],
+      "answer": 2,
+      "explanation": "For this trial, the child repeated a model on request. The lecture's correction uses imitation rather than the unsupported label.",
+      "reference": "slides 35–36, 38",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q550",
+      "topic": "d3",
+      "question": "An AI note diagnoses a disorder and says 'good progress' from the short excerpt alone. Which error type is emphasized?",
+      "options": [
+        "Correct use of a glossary",
+        "Simple omission of a heading",
+        "Accurate counting",
+        "Over-interpretation"
+      ],
+      "answer": 3,
+      "explanation": "The draft goes beyond what the supplied evidence supports. The clinician must judge interpretation using appropriate assessment evidence.",
+      "reference": "slides 35, 37",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q551",
+      "topic": "d3",
+      "question": "An AI note assigns a therapist's statement to the parent. Which error category applies?",
+      "options": [
+        "Accurate summarization",
+        "Prompt fading",
+        "Data minimization",
+        "Attribution error"
+      ],
+      "answer": 3,
+      "explanation": "The content is assigned to the wrong speaker. Clear speaker labels and source checks help catch this.",
+      "reference": "slide 35; applied example",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q552",
+      "topic": "d3",
+      "question": "What should replace the invented home-improvement report in the audited example?",
+      "options": [
+        "An inferred claim that the parent agreed with the plan",
+        "A statement that caregiver information is not stated in the source",
+        "A confident assumption of no home difficulties",
+        "A different typical report from a similar child"
+      ],
+      "answer": 1,
+      "explanation": "Do not replace one invention with another. State the source's information gap honestly.",
+      "reference": "slide 36",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q553",
+      "topic": "d3",
+      "question": "What support detail should be added to the note about the case's AAC trial?",
+      "options": [
+        "The child used the device without any support",
+        "The therapist gave physical guidance on every trial",
+        "The therapist pointed to the WANT button before the response",
+        "The device supplied a diagnosis"
+      ],
+      "answer": 2,
+      "explanation": "The source records a gestural cue. That detail is needed to explain why the trial is prompted-correct.",
+      "reference": "slides 13, 26, 37",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q554",
+      "topic": "d3",
+      "question": "Why is the proposed move to three-word phrases unsupported in the unreviewed draft?",
+      "options": [
+        "The original target was already three-word phrases",
+        "Every AAC response automatically requires a harder target",
+        "All six trials were independently correct",
+        "The excerpt still shows emerging two-word requests with prompt dependence"
+      ],
+      "answer": 3,
+      "explanation": "A plan should follow the evidence. The lecture's corrected example continues the two-word target and works on reducing support.",
+      "reference": "slides 18, 37, 43",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q555",
+      "topic": "d3",
+      "question": "In the lecture's terminology refresher, receptive language concerns what?",
+      "options": [
+        "Only voice quality",
+        "Only articulating speech sounds",
+        "Producing language",
+        "Understanding language"
+      ],
+      "answer": 3,
+      "explanation": "Receptive relates to what a person understands. Keep this distinct from the language they produce.",
+      "reference": "slide 38",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q556",
+      "topic": "d3",
+      "question": "In the same refresher, expressive language concerns what?",
+      "options": [
+        "Measuring vocal loudness only",
+        "Recognizing another person's face",
+        "Producing language",
+        "Understanding language only"
+      ],
+      "answer": 2,
+      "explanation": "Expressive relates to communicating language outwardly. The term should not be substituted for receptive understanding.",
+      "reference": "slide 38",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q557",
+      "topic": "d3",
+      "question": "Which distinction does the lecture make between speech and language?",
+      "options": [
+        "Speech means understanding and language means only voice",
+        "Language refers only to the number of syllables",
+        "Speech and language always mean exactly the same thing",
+        "Speech concerns sounds, fluency and voice; language concerns form, content and use"
+      ],
+      "answer": 3,
+      "explanation": "A problem with language should not automatically be called a speech-sound problem. Precise terms help the note describe the actual target.",
+      "reference": "slide 38",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q558",
+      "topic": "d3",
+      "question": "What does spontaneous mean in the lecture's terminology comparison?",
+      "options": [
+        "Self-initiated",
+        "Produced only after a question or stimulus",
+        "Repeated only after a model",
+        "Missing from the transcript"
+      ],
+      "answer": 0,
+      "explanation": "Spontaneous describes initiation. It should not be used just because a response was spoken clearly.",
+      "reference": "slide 39",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q559",
+      "topic": "d3",
+      "question": "A child responds to a clinician's question without an extra model. Can that response be both elicited and independently correct under the case rules?",
+      "options": [
+        "No, every elicited response must be P+",
+        "No, every correct response is spontaneous",
+        "Yes, elicited describes the situation while I+ describes additional support",
+        "Yes, but only if the response is omitted from the data"
+      ],
+      "answer": 2,
+      "explanation": "The ordinary question elicits the request, while an extra cue would make it prompted in this coding system. These labels describe different aspects of a response.",
+      "reference": "slides 12, 23, 26, 39; applied distinction",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q560",
+      "topic": "d3",
+      "question": "Why should an observational impression not automatically become a diagnosis?",
+      "options": [
+        "Diagnosis requires appropriate assessment evidence",
+        "One successful trial establishes the whole disorder profile",
+        "Any grammatical clinical sentence is diagnostic evidence",
+        "An LLM role instruction establishes a diagnosis"
+      ],
+      "answer": 0,
+      "explanation": "A note can describe observed behavior without making a diagnostic claim. The clinician needs appropriate evidence for that stronger conclusion.",
+      "reference": "slide 39",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q561",
+      "topic": "d3",
+      "question": "What prompt resource does the lecture suggest for improving terminology consistency?",
+      "options": [
+        "An invented list of clinical definitions",
+        "Only a vendor's promotional description",
+        "The department's glossary",
+        "An unrelated patient's final report"
+      ],
+      "answer": 2,
+      "explanation": "A shared glossary tells the drafting tool which terms to use. The clinician still checks that each term fits the actual case.",
+      "reference": "slides 38–39 and speaker notes",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q562",
+      "topic": "d3",
+      "question": "What are the five review checks in the new documentation lecture?",
+      "options": [
+        "Source, numbers, terms, reasoning and privacy",
+        "Input, hidden layer, output, weights and threshold",
+        "Role, task, context, examples and format",
+        "Accuracy, sensitivity, specificity, precision and AUC"
+      ],
+      "answer": 0,
+      "explanation": "This checklist is for reviewing a drafted note. Do not confuse it with prompt components or model-performance metrics.",
+      "reference": "slide 40",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q563",
+      "topic": "d3",
+      "question": "What does the documentation review's Source check require?",
+      "options": [
+        "Every paragraph sounds plausible",
+        "Every missing detail is silently filled",
+        "Every statement can be traced to the transcript or clinical notes",
+        "The AI repeats its claim when asked again"
+      ],
+      "answer": 2,
+      "explanation": "A statement needs a traceable basis. Repetition or confident wording does not provide one.",
+      "reference": "slide 40",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q564",
+      "topic": "d3",
+      "question": "What does the documentation review's Number check require?",
+      "options": [
+        "Keep every percentage if it is neatly rounded",
+        "Drop incorrect trials before calculating accuracy",
+        "Re-tally the data and reconcile trial totals",
+        "Accept the model's arithmetic as independent verification"
+      ],
+      "answer": 2,
+      "explanation": "Return to the trial records and count again. Make sure the total describes the actual dataset or excerpt.",
+      "reference": "slide 40",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q565",
+      "topic": "d3",
+      "question": "What does the Reasoning check protect in the new lecture?",
+      "options": [
+        "The model's right to sign the note",
+        "The clinician's judgment in Assessment and Plan",
+        "Only the spelling of the heading names",
+        "Only the number of sentences in Objective"
+      ],
+      "answer": 1,
+      "explanation": "Assessment interprets results and Plan sets next steps. The clinician must own those judgments.",
+      "reference": "slide 40",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q566",
+      "topic": "d3",
+      "question": "Which wording should raise suspicion when the evidence is limited?",
+      "options": [
+        "An explicit count linked to the trial table",
+        "Excellent progress with a definite diagnosis never supplied by the clinician",
+        "A visible [NOT STATED] marker for missing information",
+        "A description of the actual prompt used"
+      ],
+      "answer": 1,
+      "explanation": "Praise and certainty can disguise unsupported interpretation. Treat them as a reason to check the evidence.",
+      "reference": "slide 41",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q567",
+      "topic": "d3",
+      "question": "Why are round or perfect percentages a review flag rather than proof of error?",
+      "options": [
+        "A rounded number proves all responses were independent",
+        "All round percentages are mathematically impossible",
+        "They should prompt a count check, but can sometimes be correct",
+        "A perfect score can be accepted without its denominator"
+      ],
+      "answer": 2,
+      "explanation": "A suspicious pattern calls for checking. Decide whether the number is right from the source data, not its appearance alone.",
+      "reference": "slides 27, 41; applied interpretation",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q568",
+      "topic": "d3",
+      "question": "Which Objective entry most faithfully describes the six-trial excerpt?",
+      "options": [
+        "2 independent, 2 prompted-correct, 1 incorrect, 1 NR; 4/6 total correct",
+        "6 independent successes because twenty trials were planned",
+        "4 independent, 0 prompted-correct, 1 incorrect, 1 NR",
+        "4/6 independent with all prompt information omitted"
+      ],
+      "answer": 0,
+      "explanation": "The corrected note keeps all four outcome groups visible. It distinguishes two independent successes from four total successes.",
+      "reference": "slide 42",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q569",
+      "topic": "d3",
+      "question": "What does the corrected Assessment say about the two-word skill?",
+      "options": [
+        "It proves a new diagnosis from the excerpt alone",
+        "It is fully mastered independently",
+        "It shows that prompts are no longer relevant",
+        "It is emerging and half the correct responses still needed a prompt"
+      ],
+      "answer": 3,
+      "explanation": "Two of four correct responses were prompted. The assessment describes that pattern without claiming unsupported mastery.",
+      "reference": "slide 43",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q570",
+      "topic": "d3",
+      "question": "What plan is given in the lecture's corrected case note?",
+      "options": [
+        "Discontinue all AAC support immediately",
+        "End assessment because 67% proves independence",
+        "Continue two-word requests, fade model and gestural prompts, and reassess",
+        "Automatically introduce three-word requests at the next session"
+      ],
+      "answer": 2,
+      "explanation": "This is the lecture's worked-case plan. It follows the recorded support needs rather than the unreviewed draft's unsupported escalation.",
+      "reference": "slide 43",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q571",
+      "topic": "d4",
+      "question": "Who owns responsibility for every word when the clinician signs an AI-assisted note?",
+      "options": [
+        "The signing clinician",
+        "Only the transcription vendor",
+        "Only the caregiver",
+        "The language model"
+      ],
+      "answer": 0,
+      "explanation": "A drafting tool does not take professional responsibility. The clinician must accept the final content after checking it.",
+      "reference": "slides 43–44",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q572",
+      "topic": "d4",
+      "question": "What equity risk does the lecture highlight for Urdu–English bilingual children?",
+      "options": [
+        "A language difference may be wrongly recorded as a disorder",
+        "A language difference must be removed from the transcript",
+        "English-dominant training guarantees equal performance in every language",
+        "Any code-switching proves a disorder"
+      ],
+      "answer": 0,
+      "explanation": "Language background affects interpretation. Preserve the child's language and avoid converting difference into an unsupported diagnostic claim.",
+      "reference": "slide 44",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q573",
+      "topic": "d4",
+      "question": "What transparency practice supports later auditing of AI-assisted documentation?",
+      "options": [
+        "Hide how the note was drafted",
+        "Keep only the most polished sentence",
+        "Follow disclosure policy and retain prompts and versions as required",
+        "Delete the original evidence immediately"
+      ],
+      "answer": 2,
+      "explanation": "A record of the process helps explain how a draft was produced and reviewed. Follow institutional requirements for disclosure and retention.",
+      "reference": "slides 43–44",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q574",
+      "topic": "d4",
+      "question": "According to the lecture, what should caregivers understand about recording and notes?",
+      "options": [
+        "That the model assumes all clinical responsibility",
+        "Only the final document's color scheme",
+        "That a pseudonym guarantees complete anonymity",
+        "How AI processing is used within the approved workflow"
+      ],
+      "answer": 3,
+      "explanation": "Consent and transparency include explaining processing in an understandable way. The institution's policy guides the actual process.",
+      "reference": "slides 19, 44 and speaker notes",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q575",
+      "topic": "d4",
+      "question": "What is the central two-metric rule repeated at the end of the lecture?",
+      "options": [
+        "Report only the larger of the two percentages",
+        "Combine prompted and independent responses as independent",
+        "Report only the number of independent successes without a denominator",
+        "Track total correctness and independence, and report the trial count"
+      ],
+      "answer": 3,
+      "explanation": "The two measures answer different questions. Giving n keeps their evidence base visible.",
+      "reference": "slides 45, 47",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q576",
+      "topic": "d4",
+      "question": "What does the take-home task use as its session source?",
+      "options": [
+        "A fully invented final note with no transcript",
+        "A ten-minute de-identified role-play",
+        "Only a published diagnostic label",
+        "A real identifiable patient recording sent to any public chatbot"
+      ],
+      "answer": 1,
+      "explanation": "The assignment uses a role-play to practice the workflow. It still requires an appropriate transcript and constrained prompt.",
+      "reference": "slide 46",
+      "difficulty": "Recall"
+    },
+    {
+      "id": "q577",
+      "topic": "d4",
+      "question": "How should students assess the AI's coding in the take-home task?",
+      "options": [
+        "Code the trials themselves and compare agreement with the AI",
+        "Ignore every uncertain trial",
+        "Compare only the length of the two tables",
+        "Accept the AI as the answer key without checking"
+      ],
+      "answer": 0,
+      "explanation": "Independent human coding provides something to compare with the model's table. Disagreements should be examined against the source.",
+      "reference": "slide 46",
+      "difficulty": "Conceptual"
+    },
+    {
+      "id": "q578",
+      "topic": "d4",
+      "question": "If human and AI codes match on 8 of 10 compared trials, what is simple percent agreement?",
+      "options": [
+        "8%",
+        "80%",
+        "125%",
+        "20%"
+      ],
+      "answer": 1,
+      "explanation": "Divide eight matching codes by ten compared trials and multiply by 100. This exercise applies the assignment's agreement task.",
+      "reference": "slide 46; original calculation",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q579",
+      "topic": "d4",
+      "question": "Does high human–AI coding agreement by itself prove the codes are valid?",
+      "options": [
+        "Yes, agreement guarantees clinical truth",
+        "No, agreement can never be useful",
+        "Yes, any matching code removes the need for a source",
+        "No, both coders could make the same error"
+      ],
+      "answer": 3,
+      "explanation": "Agreement shows how often the codes match. Accuracy still needs a check against the actual trial and the agreed rules.",
+      "reference": "slides 24, 40, 46; applied inference",
+      "difficulty": "Applied"
+    },
+    {
+      "id": "q580",
+      "topic": "d4",
+      "question": "What should the assignment's error log and reflection help the student examine?",
+      "options": [
+        "Only which tool had the most attractive interface",
+        "Which errors occurred, their types and how the student corrected them",
+        "Only the final percentage with all disagreements removed",
+        "Only whether the AI wrote more words than a human"
+      ],
+      "answer": 1,
+      "explanation": "Logging errors makes the review process visible. Reflection should connect those errors with better checking and documentation decisions.",
+      "reference": "slide 46",
+      "difficulty": "Recall"
     }
   ],
   "sources": [
@@ -5623,6 +8955,12 @@
       "title": "AI Book for MS Program.pdf",
       "extent": "379 PDF pages · prologue and 16 chapters",
       "context": "Melanie Mitchell, Artificial Intelligence: A Guide for Thinking Humans (2019). Historical examples, forecasts and author opinions are tested in the context of the book, not presented as current AI capability claims."
+    },
+    {
+      "id": "documentation",
+      "title": "AI assisted Documentation(2).pptx",
+      "extent": "47 physical slides · tables and speaker notes reviewed",
+      "context": "AI-assisted SOAP drafting, trial-level coding, worked six-trial and five-trial cases, error auditing, terminology and professional accountability. Case data are fictional teaching examples; speaker-note content is identified where relevant."
     }
   ]
 }
